@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/web-e2e"
+    },
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./libs/shared-types"
+    },
+    {
+      "path": "./libs/ui-components"
+    },
+    {
+      "path": "./libs/db"
+    },
+    {
+      "path": "./libs/auth"
+    }
+  ]
+}
