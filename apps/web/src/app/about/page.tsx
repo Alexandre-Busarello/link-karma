@@ -1,21 +1,18 @@
 'use client';
 
-import { 
+import {
   ArrowLeft,
-  Award, 
-  Building2, 
+  Briefcase,
   Calendar,
-  Code, 
-  Github, 
-  Linkedin, 
-  MapPin, 
+  Code,
+  ExternalLink,
+  Github,
+  GraduationCap,
+  Linkedin,
+  MapPin,
+  Target,
   Users,
   Zap,
-  Target,
-  TrendingUp,
-  ExternalLink,
-  Briefcase,
-  GraduationCap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -26,59 +23,86 @@ export default function AboutPage() {
       role: 'Gerente Técnico Pleno',
       period: 'Mar 2024 - Atual',
       location: 'Blumenau, SC - Remoto',
-      description: 'Gerente técnico liderando os times de UEE (Vestibulares) e SRE (Site Reliability Engineering), com foco em modernização de infraestrutura, otimização de custos na AWS e fortalecimento da cultura DevOps.',
+      description:
+        'Gerente técnico liderando os times de UEE (Vestibulares) e SRE (Site Reliability Engineering), com foco em modernização de infraestrutura, otimização de custos na AWS e fortalecimento da cultura DevOps.',
       achievements: [
         'Continuidade no UEE: Gerencio a plataforma utilizada por mais de 70k alunos',
         'Liderança no SRE: Conduzi a remodelação da infraestrutura legada',
         'Redução de Custos: Implementei estratégias que reduziram em 20% os custos na AWS',
         'Cultura DevOps: Promovi a adoção de práticas modernas, incluindo automação CI/CD',
-        'Mentoria e Colaboração: Atuo como mentor técnico e colaboro com stakeholders'
+        'Mentoria e Colaboração: Atuo como mentor técnico e colaboro com stakeholders',
       ],
-      skills: ['AWS', 'Kubernetes', 'DevOps', 'Liderança', 'Terraform', 'Prometheus', 'Grafana']
+      skills: [
+        'AWS',
+        'Kubernetes',
+        'DevOps',
+        'Liderança',
+        'Terraform',
+        'Prometheus',
+        'Grafana',
+      ],
     },
     {
       company: 'Descomplica',
       role: 'Líder Técnico',
       period: 'Out 2023 - Mar 2024',
       location: 'Remoto',
-      description: 'Líder técnico da área de engenharia de software, responsável pelo time de UEE (Plataforma de Vestibulares) e pela gestão diária de uma plataforma utilizada por mais de 70k alunos.',
+      description:
+        'Líder técnico da área de engenharia de software, responsável pelo time de UEE (Plataforma de Vestibulares) e pela gestão diária de uma plataforma utilizada por mais de 70k alunos.',
       achievements: [
         'Conduzi a transição de uma plataforma legada para uma nova plataforma moderna',
         'Implementei uma arquitetura moderna, desacoplada e escalável em EKS na AWS',
         'Planejei e executei a migração garantindo alta disponibilidade e segurança',
         'Implantei melhorias no monitoramento com Grafana, Kibana, ElasticSearch e Prometheus',
-        'Liderei a adoção de práticas ágeis no time de engenharia'
+        'Liderei a adoção de práticas ágeis no time de engenharia',
       ],
-      skills: ['EKS', 'Microserviços', 'Kubernetes', 'Helm', 'Monitoring', 'Arquitetura']
+      skills: [
+        'EKS',
+        'Microserviços',
+        'Kubernetes',
+        'Helm',
+        'Monitoring',
+        'Arquitetura',
+      ],
     },
     {
       company: 'Descomplica',
       role: 'Engenheiro de Aplicações Sênior',
       period: 'Set 2019 - Out 2023',
       location: 'Rio de Janeiro, RJ',
-      description: 'Responsável pelo desenvolvimento técnico do produto de Enem/Vestibulares. Envolvido em tomada de decisões do produto e apoiando o time na parte técnica.',
+      description:
+        'Responsável pelo desenvolvimento técnico do produto de Enem/Vestibulares. Envolvido em tomada de decisões do produto e apoiando o time na parte técnica.',
       achievements: [
         'Modelagem do domínio utilizando os conceitos de DDD',
         'Criação de micro-serviços para atender os domínios modelados',
         'Desenvolvimento com Node.js/PostgreSQL com arquitetura própria',
         'Desenvolvimento de frontend com React utilizando microfrontends',
-        'Responsável pela qualidade geral do código fazendo reviews'
+        'Responsável pela qualidade geral do código fazendo reviews',
       ],
-      skills: ['Node.js', 'React', 'PostgreSQL', 'DDD', 'Microserviços', 'Jest', 'Terraform']
+      skills: [
+        'Node.js',
+        'React',
+        'PostgreSQL',
+        'DDD',
+        'Microserviços',
+        'Jest',
+        'Terraform',
+      ],
     },
     {
       company: 'IBM',
       role: 'Desenvolvedor de Aplicações',
       period: 'Dez 2017 - Ago 2019',
       location: 'Rio de Janeiro, RJ',
-      description: 'Desenvolvimento de soluções corporativas utilizando tecnologias Microsoft e frameworks modernos.',
+      description:
+        'Desenvolvimento de soluções corporativas utilizando tecnologias Microsoft e frameworks modernos.',
       achievements: [
         'Desenvolvimento de APIs REST em .NET',
         'Desenvolvimento e manutenção de aplicações AngularJS',
-        'Desenvolvimento com IONIC para aplicações móveis'
+        'Desenvolvimento com IONIC para aplicações móveis',
       ],
-      skills: ['.NET', 'AngularJS', 'IONIC', 'REST APIs']
-    }
+      skills: ['.NET', 'AngularJS', 'IONIC', 'REST APIs'],
+    },
   ];
 
   return (
@@ -87,7 +111,7 @@ export default function AboutPage() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <Link
-            href="/"
+            href="/pt"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -109,8 +133,9 @@ export default function AboutPage() {
               Desenvolvedor & Fundador do LinkKarma
             </h1>
             <p className="text-xl text-blue-100 mb-6 max-w-3xl mx-auto">
-              Gerente Técnico na Descomplica com 10+ anos de experiência em engenharia de software, 
-              liderança técnica e arquitetura de sistemas escaláveis.
+              Gerente Técnico na Descomplica com 10+ anos de experiência em
+              engenharia de software, liderança técnica e arquitetura de
+              sistemas escaláveis.
             </p>
             <div className="flex items-center justify-center gap-2 text-blue-100">
               <MapPin className="w-5 h-5" />
@@ -128,8 +153,9 @@ export default function AboutPage() {
               Experiência Profissional
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Uma jornada de crescimento contínuo, desde desenvolvedor até liderança técnica, 
-              sempre focado em entregar soluções de alto impacto.
+              Uma jornada de crescimento contínuo, desde desenvolvedor até
+              liderança técnica, sempre focado em entregar soluções de alto
+              impacto.
             </p>
           </div>
 
@@ -140,19 +166,23 @@ export default function AboutPage() {
                 {index < experiences.length - 1 && (
                   <div className="absolute left-6 top-16 w-0.5 h-full bg-gray-200"></div>
                 )}
-                
+
                 <div className="flex gap-6">
                   {/* Timeline dot */}
                   <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                     <Briefcase className="w-6 h-6 text-white" />
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1 bg-white rounded-xl shadow-lg p-6 sm:p-8">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900">{exp.role}</h3>
-                        <p className="text-blue-600 font-semibold">{exp.company}</p>
+                        <h3 className="text-xl font-bold text-gray-900">
+                          {exp.role}
+                        </h3>
+                        <p className="text-blue-600 font-semibold">
+                          {exp.company}
+                        </p>
                       </div>
                       <div className="text-sm text-gray-500 mt-2 sm:mt-0">
                         <div className="flex items-center gap-1 mb-1">
@@ -165,26 +195,35 @@ export default function AboutPage() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-700 mb-6">{exp.description}</p>
-                    
+
                     <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">Principais Conquistas:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        Principais Conquistas:
+                      </h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-700 text-sm">{achievement}</span>
+                            <span className="text-gray-700 text-sm">
+                              {achievement}
+                            </span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Tecnologias:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        Tecnologias:
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {exp.skills.map((skill) => (
-                          <span key={skill} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                          <span
+                            key={skill}
+                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                          >
                             {skill}
                           </span>
                         ))}
@@ -217,9 +256,9 @@ export default function AboutPage() {
                 </p>
                 <p className="text-gray-600 mb-4">2008 - 2014</p>
                 <p className="text-gray-700">
-                  Formação sólida em desenvolvimento de software, engenharia de software, 
-                  redes de computadores e linguagens de programação. Curso concluído no 
-                  2º semestre de 2013.
+                  Formação sólida em desenvolvimento de software, engenharia de
+                  software, redes de computadores e linguagens de programação.
+                  Curso concluído no 2º semestre de 2013.
                 </p>
               </div>
             </div>
@@ -232,43 +271,92 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Backend & Cloud</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    Backend & Cloud
+                  </h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Node.js', 'TypeScript', 'PostgreSQL', 'AWS', 'Kubernetes', 'Docker', 'Terraform'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                    {[
+                      'Node.js',
+                      'TypeScript',
+                      'PostgreSQL',
+                      'AWS',
+                      'Kubernetes',
+                      'Docker',
+                      'Terraform',
+                    ].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Frontend & Mobile</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    Frontend & Mobile
+                  </h4>
                   <div className="flex flex-wrap gap-2">
-                    {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Angular', 'IONIC'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                    {[
+                      'React',
+                      'Next.js',
+                      'TypeScript',
+                      'Tailwind CSS',
+                      'Angular',
+                      'IONIC',
+                    ].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">DevOps & Monitoring</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    DevOps & Monitoring
+                  </h4>
                   <div className="flex flex-wrap gap-2">
-                    {['CI/CD', 'Prometheus', 'Grafana', 'ElasticSearch', 'Kibana', 'Helm'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                    {[
+                      'CI/CD',
+                      'Prometheus',
+                      'Grafana',
+                      'ElasticSearch',
+                      'Kibana',
+                      'Helm',
+                    ].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Liderança & Gestão</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    Liderança & Gestão
+                  </h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Liderança Técnica', 'Mentoria', 'Arquitetura', 'DDD', 'Microserviços', 'Agile'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+                    {[
+                      'Liderança Técnica',
+                      'Mentoria',
+                      'Arquitetura',
+                      'DDD',
+                      'Microserviços',
+                      'Agile',
+                    ].map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -288,32 +376,42 @@ export default function AboutPage() {
           </h2>
           <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-12">
             <blockquote className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-8">
-              "Após anos liderando equipes e construindo plataformas que servem dezenas de milhares de usuários, 
-              decidi aplicar toda essa experiência em um projeto pessoal. LinkKarma representa a convergência 
-              de tudo que aprendi sobre arquitetura escalável, experiência do usuário e construção de 
-              comunidades digitais sustentáveis."
+              "Após anos liderando equipes e construindo plataformas que servem
+              dezenas de milhares de usuários, decidi aplicar toda essa
+              experiência em um projeto pessoal. LinkKarma representa a
+              convergência de tudo que aprendi sobre arquitetura escalável,
+              experiência do usuário e construção de comunidades digitais
+              sustentáveis."
             </blockquote>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Target className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Experiência</h3>
-                <p className="text-gray-600 text-sm">10+ anos construindo sistemas escaláveis</p>
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Experiência
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  10+ anos construindo sistemas escaláveis
+                </p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Impacto</h3>
-                <p className="text-gray-600 text-sm">70k+ usuários impactados diretamente</p>
+                <p className="text-gray-600 text-sm">
+                  70k+ usuários impactados diretamente
+                </p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Zap className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Inovação</h3>
-                <p className="text-gray-600 text-sm">Sempre buscando soluções disruptivas</p>
+                <p className="text-gray-600 text-sm">
+                  Sempre buscando soluções disruptivas
+                </p>
               </div>
             </div>
           </div>
@@ -327,7 +425,8 @@ export default function AboutPage() {
             Vamos Conversar
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Interessado em conhecer mais sobre o projeto ou trocar ideias sobre tecnologia?
+            Interessado em conhecer mais sobre o projeto ou trocar ideias sobre
+            tecnologia?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -349,7 +448,7 @@ export default function AboutPage() {
               GitHub
             </a>
             <Link
-              href="/"
+              href="/pt"
               className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
             >
               <ExternalLink className="w-5 h-5 mr-2" />

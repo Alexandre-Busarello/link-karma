@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { useLocalizedNavigation } from '../../../hooks/useLocalizedNavigation';
 
 import { useIntl } from '@linkkarma/intl';
 
@@ -26,6 +27,7 @@ interface OnboardingStep {
 
 export default function OnboardingPage() {
   const router = useRouter();
+  const { push: localizedPush } = useLocalizedNavigation();
   const { isAuthenticated, user } = useAuthStore();
   const { t } = useIntl();
   const [currentStep, setCurrentStep] = useState(0);
@@ -311,7 +313,7 @@ export default function OnboardingPage() {
   const handleNext = () => {
     if (isLastStep) {
       // Complete onboarding and redirect to dashboard
-      router.push('/');
+      localizedPush('/');
     } else {
       setCurrentStep(currentStep + 1);
     }
@@ -324,7 +326,7 @@ export default function OnboardingPage() {
   };
 
   const handleSkip = () => {
-    router.push('/');
+    localizedPush('/');
   };
 
   if (!isAuthenticated) {

@@ -419,6 +419,129 @@ export type TranslationFunction = (key: TranslationKey, fallback?: string) => st
 
 **Status:** ✅ **COMPLETO** - Componentes e páginas principais 100% internacionalizados SEM STRINGS HARDCODED + Suporte completo a arrays
 
+### 🌐 **ROTEAMENTO BASEADO EM URL + DETECÇÃO DE IDIOMA (2025-08-01)**
+
+**Sistema Completo de Roteamento Multilíngue Implementado:**
+
+**🔧 Middleware Inteligente (`apps/web/middleware.ts`):**
+
+- ✅ Detecção automática de idioma preferido do localStorage via cookie
+- ✅ Redirecionamento inteligente: `/` → `/pt` ou `/en` baseado na preferência
+- ✅ Fallback para Accept-Language header quando não há preferência salva
+- ✅ Validação de locales e redirecionamento para locale padrão em caso de erro
+- ✅ Sincronização automática entre URL e preferência do usuário
+
+**🔄 Componentes de Sincronização:**
+
+- ✅ `LanguageSync` - Sincroniza localStorage com cookies para o middleware
+- ✅ `LanguageSwitcher` atualizado - Atualiza cookie ao trocar idioma
+- ✅ Página raiz client-side - Detecta preferência e redireciona adequadamente
+
+**📁 Estrutura de Rotas Reorganizada:**
+
+```
+apps/web/src/app/
+├── page.tsx                    # Detecção de idioma + redirecionamento
+├── middleware.ts               # Middleware de roteamento multilíngue
+├── [locale]/
+│   ├── page.tsx               # Landing page (pt/en)
+│   ├── onboarding/page.tsx    # Onboarding internacionalizado
+│   └── showcases/
+│       ├── page.tsx           # Listagem de showcases
+│       ├── create/            # Criação de showcases
+│       └── [user]/            # Perfis de usuário
+├── auth/                      # Autenticação (sem locale)
+├── api/                       # API routes (sem locale)
+└── about/                     # Página sobre (estática)
+```
+
+**🎯 Funcionalidades Implementadas:**
+
+- ✅ **Detecção inteligente**: Lê `linkkarma-language-storage` do localStorage
+- ✅ **URLs consistentes**: Todas as rotas seguem `/pt/*` e `/en/*`
+- ✅ **Redirecionamento automático**: `/` → idioma preferido do usuário
+- ✅ **Sincronização bidirecional**: URL ↔ localStorage ↔ Cookie
+- ✅ **Fallback robusto**: Accept-Language → Português (padrão)
+- ✅ **Performance otimizada**: Middleware eficiente com cache de cookies
+
+**🌍 Comportamento do Sistema:**
+
+- `http://localhost:3000/` → Detecta idioma salvo → `/pt` ou `/en`
+- `http://localhost:3000/pt/showcases` → Português + atualiza preferência
+- `http://localhost:3000/en/onboarding` → Inglês + atualiza preferência
+- `http://localhost:3000/showcases` → Redireciona para `/pt/showcases` ou `/en/showcases`
+
+### 🔗 **NAVEGAÇÃO INTERNA LOCALIZADA (2025-08-01)**
+
+**Sistema Completo de Links e Navegação Multilíngue:**
+
+**🛠️ Hook Personalizado (`useLocalizedNavigation`):**
+
+- ✅ `push(path)` - Navegação com locale automático
+- ✅ `replace(path)` - Substituição com locale automático
+- ✅ `createHref(path)` - Criação de URLs com locale
+- ✅ `getCurrentLocale()` - Detecção do locale atual
+- ✅ `getPathWithoutLocale()` - Remoção do locale da URL
+
+**📝 Componentes Atualizados:**
+
+- ✅ `Navigation.tsx` - Todos os links internos com locale
+- ✅ `LandingNavigation.tsx` - Navegação da landing page
+- ✅ `BoostedShowcases.tsx` - Links para showcases individuais
+- ✅ `RecentShowcases.tsx` - Links para showcases recentes
+- ✅ `ConditionalNavigation.tsx` - Detecção de páginas com locale
+- ✅ `AuthGuard.tsx` - Redirecionamentos pós-autenticação
+- ✅ `LanguageSwitcher.tsx` - Troca de idioma com atualização de URL
+
+**🎯 Funcionalidades Implementadas:**
+
+- ✅ **Links automáticos**: Todos os `<Link href>` incluem locale
+- ✅ **Navegação programática**: `router.push()` com locale automático
+- ✅ **URLs de showcase**: Padrão `/pt/showcases/user-123/titulo-slug`
+- ✅ **Redirecionamentos**: Pós-login, logout e mudança de idioma
+- ✅ **Consistência total**: Toda navegação interna respeita o idioma
+
+**🌍 Comportamento Atualizado:**
+
+- Logo LinkKarma → `/pt/` ou `/en/` (baseado no idioma atual)
+- Menu "Vitrines" → `/pt/showcases` ou `/en/showcases`
+- "Criar Vitrine" → `/pt/showcases/create` ou `/en/showcases/create`
+- Showcases individuais → `/pt/showcases/user-123/titulo` ou `/en/showcases/user-123/title`
+- Pós-logout → Redireciona para `/pt/` ou `/en/` (mantém idioma)
+
+### 🔧 **NAVEGAÇÃO PROGRAMÁTICA LOCALIZADA (2025-08-01)**
+
+**Correção Completa de `router.push()` e `router.replace()`:**
+
+**📱 Páginas Atualizadas:**
+
+- ✅ `apps/web/src/app/[locale]/showcases/page.tsx` - Botão "Criar Vitrine" com locale
+- ✅ `apps/web/src/app/[locale]/onboarding/page.tsx` - Navegação pós-onboarding e skip
+- ✅ `apps/web/src/app/auth/signin/page.tsx` - Redirecionamentos pós-login com locale
+- ✅ `apps/web/src/app/auth/signup/page.tsx` - Redirecionamentos pós-cadastro com locale
+- ✅ `apps/web/src/app/auth/callback/page.tsx` - Callback OAuth com locale
+
+**🛠️ Implementações Técnicas:**
+
+- ✅ **Hook `useLocalizedNavigation`**: Usado em páginas com locale para navegação automática
+- ✅ **Função `handleRedirect`**: Criada para páginas de auth que lidam com URLs externas
+- ✅ **Detecção inteligente**: Verifica se URL já tem locale antes de adicionar
+- ✅ **Fallback robusto**: Usa cookie `linkkarma-preferred-language` ou padrão 'pt'
+
+**🎯 Comportamentos Corrigidos:**
+
+- `router.push('/showcases/create')` → `localizedPush('/showcases/create')` → `/pt/showcases/create`
+- `router.push('/')` no onboarding → `localizedPush('/')` → `/pt/` ou `/en/`
+- Redirecionamentos pós-auth → Detecta locale do cookie e aplica automaticamente
+- URLs com locale existente → Mantém como estão (não duplica locale)
+
+**🌍 Resultado Final:**
+
+- ✅ **100% das navegações** respeitam o idioma selecionado
+- ✅ **Consistência total** entre navegação por links e programática
+- ✅ **Experiência fluida** sem quebras de idioma durante a navegação
+- ✅ **Compatibilidade** com URLs externas e redirecionamentos de auth
+
 ### 🌐 **INTERNACIONALIZAÇÃO COMPLETA - UI Components (2025-08-01)**
 
 **Componentes Internacionalizados:**

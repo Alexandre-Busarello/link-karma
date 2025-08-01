@@ -6,10 +6,14 @@ import { Showcase } from '@linkkarma/shared-types';
 import { ArrowRight, Shield, Sparkles, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useLocalizedNavigation } from '../hooks/useLocalizedNavigation';
 import { ShowcasePreview } from './ShowcasePreview';
 
 // Function to generate showcase URL following the /:user/:id pattern
-const generateShowcaseUrl = (showcase: Showcase) => {
+const generateShowcaseUrl = (
+  showcase: Showcase,
+  createHref: (path: string) => string
+) => {
   // Generate a slug from the title
   const slug = showcase.title
     .toLowerCase()
@@ -22,11 +26,12 @@ const generateShowcaseUrl = (showcase: Showcase) => {
   // In a real app, this would be the actual user's username/slug
   const userSlug = `user-${showcase.id}`;
 
-  return `/showcases/${userSlug}/${slug}`;
+  return createHref(`/showcases/${userSlug}/${slug}`);
 };
 
 export function RecentShowcases() {
   const { t } = useIntl();
+  const { createHref } = useLocalizedNavigation();
   const [showcases, setShowcases] = useState<Showcase[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -116,7 +121,7 @@ export function RecentShowcases() {
                   className="animate-fade-in-up"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <Link href={generateShowcaseUrl(showcase)}>
+                  <Link href={generateShowcaseUrl(showcase, createHref)}>
                     <ShowcasePreview showcase={showcase} />
                   </Link>
                 </div>

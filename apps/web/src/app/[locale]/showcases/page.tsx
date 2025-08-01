@@ -17,11 +17,13 @@ import {
 import { ArrowLeft, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
+import { useLocalizedNavigation } from '../../../hooks/useLocalizedNavigation';
 
 type ViewMode = 'listing' | 'display';
 
 export default function ShowcasesPage() {
   const router = useRouter();
+  const { push: localizedPush } = useLocalizedNavigation();
   const { isAuthenticated } = useAuthStore();
   const { t } = useIntl();
   const [viewMode, setViewMode] = useState<ViewMode>('listing');
@@ -77,7 +79,7 @@ export default function ShowcasesPage() {
   }, []); // Empty dependency array for initial load only
 
   const handleCreateShowcase = () => {
-    router.push('/showcases/create');
+    localizedPush('/showcases/create');
   };
 
   const handleShowcaseClick = async (showcase: Showcase) => {

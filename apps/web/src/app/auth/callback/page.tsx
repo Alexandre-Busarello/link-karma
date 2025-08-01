@@ -1,15 +1,39 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@linkkarma/auth';
+import { AlertCircle, Loader2 } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function AuthCallbackPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Helper function to handle redirects with locale
+  const handleRedirect = (url: string) => {
+    // If URL already has locale, use as is
+    if (url.startsWith('/pt/') || url.startsWith('/en/')) {
+      router.push(url);
+      return;
+    }
+
+    // If URL is root, redirect to Portuguese (default)
+    if (url === '/') {
+      router.push('/pt');
+      return;
+    }
+
+    // For other URLs, try to get preferred language from cookie
+    const preferredLanguage =
+      document.cookie
+        .split('; ')
+        .find((row) => row.startsWith('linkkarma-preferred-language='))
+        ?.split('=')[1] || 'pt';
+
+    router.push(`/${preferredLanguage}${url}`);
+  };
 
   useEffect(() => {
     const handleAuthCallback = async () => {
@@ -26,15 +50,16 @@ export default function AuthCallbackPage() {
 
         if (data.session) {
           // Check if this is a new user (first time signing in)
-          const isNewUser = data.session.user.created_at === data.session.user.updated_at;
-          
+          const isNewUser =
+            data.session.user.created_at === data.session.user.updated_at;
+
           if (isNewUser) {
             // New user should go through onboarding
-            router.push('/onboarding');
+            handleRedirect('/onboarding');
           } else {
             // Existing user goes to dashboard or redirect URL
             const redirectTo = searchParams.get('redirect') || '/';
-            router.push(redirectTo);
+            handleRedirect(redirectTo);
           }
         } else {
           // No session, redirect to sign in
@@ -60,9 +85,7 @@ export default function AuthCallbackPage() {
               <h2 className="text-lg font-medium text-gray-900 mb-2">
                 Erro na Autenticação
               </h2>
-              <p className="text-sm text-gray-600 mb-6">
-                {error}
-              </p>
+              <p className="text-sm text-gray-600 mb-6">{error}</p>
               <button
                 onClick={() => router.push('/auth/signin')}
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"

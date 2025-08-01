@@ -6,10 +6,12 @@ import { LogIn, Menu, User, UserPlus, X } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useLocalizedNavigation } from '../hooks/useLocalizedNavigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function LandingNavigation() {
   const router = useRouter();
+  const { createHref, getPathWithoutLocale } = useLocalizedNavigation();
   const { isAuthenticated, user, signOut } = useAuthStore();
   const { t } = useIntl();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -128,7 +130,7 @@ export function LandingNavigation() {
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
                 <Link
-                  href="/showcases"
+                  href={createHref('/showcases')}
                   className="text-gray-700 hover:text-purple-600 transition-colors text-sm font-medium"
                 >
                   {t('frontend.landing.navigation.myShowcases')}

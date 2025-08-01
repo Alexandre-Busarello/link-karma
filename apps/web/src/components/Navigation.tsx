@@ -13,9 +13,11 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useLocalizedNavigation } from '../hooks/useLocalizedNavigation';
 
 export function Navigation() {
   const router = useRouter();
+  const { push: localizedPush, createHref } = useLocalizedNavigation();
   const { isAuthenticated, user, signOut, isLoading } = useAuthStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -23,7 +25,7 @@ export function Navigation() {
   const handleSignOut = async () => {
     await signOut();
     setIsUserMenuOpen(false);
-    router.push('/');
+    localizedPush('/');
   };
 
   const handleSignIn = () => {
@@ -53,7 +55,10 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link
+              href={createHref('/')}
+              className="flex items-center space-x-2"
+            >
               <h1 className="text-xl font-bold text-purple-600">LinkKarma</h1>
               <span className="text-sm text-gray-500">MVP Demo</span>
             </Link>
@@ -62,7 +67,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <Link
-              href="/showcases"
+              href={createHref('/showcases')}
               className="text-gray-700 hover:text-purple-600 transition-colors"
             >
               Vitrines
@@ -71,7 +76,7 @@ export function Navigation() {
             {isAuthenticated ? (
               <>
                 <Link
-                  href="/showcases/create"
+                  href={createHref('/showcases/create')}
                   className="flex items-center text-gray-700 hover:text-purple-600 transition-colors"
                 >
                   <Plus className="h-4 w-4 mr-1" />
@@ -171,7 +176,7 @@ export function Navigation() {
           <div className="md:hidden mt-4 pb-4 border-t pt-4">
             <div className="space-y-3">
               <Link
-                href="/showcases"
+                href={createHref('/showcases')}
                 className="block text-gray-700 hover:text-purple-600 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -181,7 +186,7 @@ export function Navigation() {
               {isAuthenticated ? (
                 <>
                   <Link
-                    href="/showcases/create"
+                    href={createHref('/showcases/create')}
                     className="flex items-center text-gray-700 hover:text-purple-600 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >

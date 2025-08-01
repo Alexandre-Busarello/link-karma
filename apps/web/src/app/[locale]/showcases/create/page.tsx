@@ -1,5 +1,6 @@
 'use client';
 
+import { useAuthStore } from '@linkkarma/auth';
 import { mockShowcaseService } from '@linkkarma/db';
 import {
   CreateShowcaseRequest,
@@ -18,8 +19,7 @@ import {
 import { ArrowLeft, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useAuthStore } from '@linkkarma/auth';
-import AuthGuard from '../../../components/AuthGuard';
+import AuthGuard from '../../../../components/AuthGuard';
 
 interface APIResult {
   data: {
@@ -40,11 +40,14 @@ export default function CreateShowcasePage() {
     isLoading: false,
     error: null,
   });
-  const [creationStep, setCreationStep] = useState<ShowcaseCreationStep>('url-input');
-  const [securityCheck, setSecurityCheck] = useState<SecurityCheckResult | null>(null);
+  const [creationStep, setCreationStep] =
+    useState<ShowcaseCreationStep>('url-input');
+  const [securityCheck, setSecurityCheck] =
+    useState<SecurityCheckResult | null>(null);
   const [userAcceptedRisk, setUserAcceptedRisk] = useState(false);
   const [pendingUrl, setPendingUrl] = useState<string>('');
-  const [pendingCategory, setPendingCategory] = useState<ShowcaseCategory>('other');
+  const [pendingCategory, setPendingCategory] =
+    useState<ShowcaseCategory>('other');
 
   // Mock user data - in real app this would come from auth context
   const mockUser = {
@@ -245,7 +248,9 @@ export default function CreateShowcasePage() {
 
       // Show success message and redirect to showcase view
       setTimeout(() => {
-        router.push(`/showcases/${updatedShowcase.user_id}/${updatedShowcase.id}`);
+        router.push(
+          `/showcases/${updatedShowcase.user_id}/${updatedShowcase.id}`
+        );
       }, 1000);
     } catch (error) {
       setLoading({
@@ -474,7 +479,9 @@ export default function CreateShowcasePage() {
                 </div>
                 <div className="ml-3">
                   <h3 className="text-sm font-medium text-red-800">Erro</h3>
-                  <div className="mt-2 text-sm text-red-700">{loading.error}</div>
+                  <div className="mt-2 text-sm text-red-700">
+                    {loading.error}
+                  </div>
                   <div className="mt-4">
                     <button
                       onClick={() =>

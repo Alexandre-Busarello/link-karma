@@ -15,10 +15,14 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useLocalizedNavigation } from '../hooks/useLocalizedNavigation';
 import { ShowcasePreview } from './ShowcasePreview';
 
 // Function to generate showcase URL following the /:user/:id pattern
-const generateShowcaseUrl = (showcase: Showcase) => {
+const generateShowcaseUrl = (
+  showcase: Showcase,
+  createHref: (path: string) => string
+) => {
   const slug = showcase.title
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '')
@@ -27,11 +31,12 @@ const generateShowcaseUrl = (showcase: Showcase) => {
     .trim();
 
   const userSlug = `user-${showcase.id}`;
-  return `/showcases/${userSlug}/${slug}`;
+  return createHref(`/showcases/${userSlug}/${slug}`);
 };
 
 export function BoostedShowcases() {
   const { t } = useIntl();
+  const { createHref } = useLocalizedNavigation();
   const [showcases, setShowcases] = useState<Showcase[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -155,7 +160,7 @@ export function BoostedShowcases() {
         {/* Showcase Carousel */}
         <div className="relative max-w-4xl mx-auto">
           <div className="relative overflow-hidden rounded-2xl">
-            <Link href={generateShowcaseUrl(currentShowcase)}>
+            <Link href={generateShowcaseUrl(currentShowcase, createHref)}>
               <div className="relative">
                 <ShowcasePreview
                   showcase={currentShowcase}

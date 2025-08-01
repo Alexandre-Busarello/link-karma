@@ -2,11 +2,12 @@
 
 import { useIntl } from '@linkkarma/intl';
 import { Globe } from 'lucide-react';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export function LanguageSwitcher() {
-  const { language, setLanguage, availableLanguages, languageNames } = useIntl();
+  const { language, setLanguage, availableLanguages, languageNames } =
+    useIntl();
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +15,16 @@ export function LanguageSwitcher() {
   const handleLanguageChange = (newLanguage: string) => {
     // Update the language in the store
     setLanguage(newLanguage as any);
-    
+
     // Navigate to the new language route
     const currentPath = pathname.replace(/^\/[a-z]{2}/, ''); // Remove current locale
     const newPath = `/${newLanguage}${currentPath}`;
-    
+
+    // Update cookie for middleware
+    document.cookie = `linkkarma-preferred-language=${newLanguage}; path=/; max-age=${
+      365 * 24 * 60 * 60
+    }; samesite=lax`;
+
     router.push(newPath);
     setIsOpen(false);
   };
@@ -30,7 +36,9 @@ export function LanguageSwitcher() {
         className="flex items-center space-x-2 px-3 py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors"
       >
         <Globe className="w-4 h-4" />
-        <span className="hidden sm:inline">{languageNames[language as keyof typeof languageNames]}</span>
+        <span className="hidden sm:inline">
+          {languageNames[language as keyof typeof languageNames]}
+        </span>
         <span className="sm:hidden">{language.toUpperCase()}</span>
       </button>
 
@@ -41,7 +49,7 @@ export function LanguageSwitcher() {
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          
+
           {/* Dropdown */}
           <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 z-20">
             {availableLanguages.map((lang) => (

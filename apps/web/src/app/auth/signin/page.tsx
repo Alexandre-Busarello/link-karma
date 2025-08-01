@@ -13,16 +13,40 @@ export default function SignInPage() {
   // Get redirect URL from query params
   const redirectTo = searchParams.get('redirect') || '/';
 
+  // Helper function to handle redirects with locale
+  const handleRedirect = (url: string) => {
+    // If URL already has locale, use as is
+    if (url.startsWith('/pt/') || url.startsWith('/en/')) {
+      router.push(url);
+      return;
+    }
+
+    // If URL is root, redirect to Portuguese (default)
+    if (url === '/') {
+      router.push('/pt');
+      return;
+    }
+
+    // For other URLs, try to get preferred language from cookie
+    const preferredLanguage =
+      document.cookie
+        .split('; ')
+        .find((row) => row.startsWith('linkkarma-preferred-language='))
+        ?.split('=')[1] || 'pt';
+
+    router.push(`/${preferredLanguage}${url}`);
+  };
+
   // Redirect if already authenticated
   useEffect(() => {
     if (isInitialized && isAuthenticated) {
-      router.push(redirectTo);
+      handleRedirect(redirectTo);
     }
-  }, [isAuthenticated, isInitialized, router, redirectTo]);
+  }, [isAuthenticated, isInitialized, redirectTo]);
 
   // Handle successful sign in
   const handleSignInSuccess = () => {
-    router.push(redirectTo);
+    handleRedirect(redirectTo);
   };
 
   // Handle switch to sign up
