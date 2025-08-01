@@ -1,6 +1,7 @@
 'use client';
 
 import { mockShowcaseService } from '@linkkarma/db';
+import { useIntl } from '@linkkarma/intl';
 import { Showcase } from '@linkkarma/shared-types';
 import {
   ArrowLeft,
@@ -30,6 +31,7 @@ const generateShowcaseUrl = (showcase: Showcase) => {
 };
 
 export function BoostedShowcases() {
+  const { t } = useIntl();
   const [showcases, setShowcases] = useState<Showcase[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -105,11 +107,10 @@ export function BoostedShowcases() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-100 rounded-full text-purple-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-              Vitrines em Destaque
+              {t('frontend.showcases.boosted.title')}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-              <span className="text-purple-600">Impulsionadas</span> pela
-              Comunidade
+              {t('frontend.showcases.boosted.subtitle')}
             </h2>
           </div>
 
@@ -141,16 +142,13 @@ export function BoostedShowcases() {
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-100 rounded-full text-purple-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-            Vitrines em Destaque
+            {t('frontend.showcases.boosted.title')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0">
-            <span className="text-purple-600">Impulsionadas</span> pela
-            Comunidade
+            {t('frontend.showcases.boosted.subtitle')}
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Vitrines que receberam investimento em Karma Points para maior
-            visibilidade. Destaques e impulsionamentos feitos pela própria
-            comunidade.
+            {t('frontend.showcases.boosted.description')}
           </p>
         </div>
 
@@ -170,7 +168,7 @@ export function BoostedShowcases() {
                     new Date(currentShowcase.featured_until) > new Date() && (
                       <div className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg">
                         <Crown className="w-3 h-3 fill-current" />
-                        Destaque Premium
+                        {t('frontend.showcases.boosted.featuredPremium')}
                       </div>
                     )}
 
@@ -187,7 +185,7 @@ export function BoostedShowcases() {
                   <div className="absolute top-4 right-4">
                     <div className="flex items-center gap-1 px-3 py-1.5 bg-black/70 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                       <Clock className="w-3 h-3" />
-                      Ativo
+                      {t('frontend.showcases.boosted.active')}
                     </div>
                   </div>
                 )}
@@ -246,7 +244,9 @@ export function BoostedShowcases() {
                 ).length
               }
             </h3>
-            <p className="text-gray-600 text-sm">Destaques Ativos</p>
+            <p className="text-gray-600 text-sm">
+              {t('frontend.showcases.boosted.activeHighlights')}
+            </p>
           </div>
 
           <div className="text-center p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50">
@@ -256,7 +256,9 @@ export function BoostedShowcases() {
             <h3 className="text-2xl font-bold text-gray-900 mb-1">
               {showcases.filter((s) => s.karma_boost > 0).length}
             </h3>
-            <p className="text-gray-600 text-sm">Impulsionamentos</p>
+            <p className="text-gray-600 text-sm">
+              {t('frontend.showcases.boosted.boosts')}
+            </p>
           </div>
 
           <div className="text-center p-6 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50">
@@ -264,7 +266,9 @@ export function BoostedShowcases() {
               <Eye className="w-6 h-6 text-green-600" />
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-1">+300%</h3>
-            <p className="text-gray-600 text-sm">Mais Visibilidade</p>
+            <p className="text-gray-600 text-sm">
+              {t('frontend.showcases.boosted.moreVisibility')}
+            </p>
           </div>
         </div>
 
@@ -272,12 +276,10 @@ export function BoostedShowcases() {
         <div className="mt-12 sm:mt-16 text-center">
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 sm:p-8 text-white mx-4 sm:mx-0">
             <h3 className="text-2xl font-bold mb-4">
-              Quer Impulsionar Sua Vitrine?
+              {t('frontend.showcases.boosted.wantBoost')}
             </h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Use seus Karma Points para destacar sua vitrine e alcançar muito
-              mais pessoas. Quanto mais KP investir, maior será sua
-              visibilidade!
+              {t('frontend.showcases.boosted.useKarmaPoints')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
@@ -285,14 +287,14 @@ export function BoostedShowcases() {
                 className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base w-full sm:w-auto justify-center"
               >
                 <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Ver Todas as Vitrines
+                {t('frontend.showcases.recent.viewAll')}
               </Link>
               <Link
                 href="/auth/signup"
                 className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-300 transition-colors text-sm sm:text-base w-full sm:w-auto justify-center"
               >
                 <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Começar a Impulsionar
+                {t('frontend.showcases.boosted.startBoosting')}
               </Link>
             </div>
           </div>

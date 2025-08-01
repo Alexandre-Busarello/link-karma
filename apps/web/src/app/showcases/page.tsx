@@ -2,6 +2,7 @@
 
 import { useAuthStore } from '@linkkarma/auth';
 import { mockShowcaseService } from '@linkkarma/db';
+import { useIntl } from '@linkkarma/intl';
 import {
   LoadingState,
   PaginatedResponse,
@@ -22,6 +23,7 @@ type ViewMode = 'listing' | 'display';
 export default function ShowcasesPage() {
   const router = useRouter();
   const { isAuthenticated } = useAuthStore();
+  const { t } = useIntl();
   const [viewMode, setViewMode] = useState<ViewMode>('listing');
   const [showcases, setShowcases] = useState<PaginatedResponse<Showcase>>({
     data: [],
@@ -42,7 +44,9 @@ export default function ShowcasesPage() {
       setLoading({
         isLoading: false,
         error:
-          error instanceof Error ? error.message : 'Erro ao carregar vitrines',
+          error instanceof Error
+            ? error.message
+            : t('frontend.showcases.error.loadingShowcases'),
       });
     } finally {
       setLoading((prev) => ({ ...prev, isLoading: false }));
@@ -62,7 +66,7 @@ export default function ShowcasesPage() {
           error:
             error instanceof Error
               ? error.message
-              : 'Erro ao carregar vitrines',
+              : t('frontend.showcases.error.loadingShowcases'),
         });
       } finally {
         setLoading((prev) => ({ ...prev, isLoading: false }));
@@ -105,11 +109,11 @@ export default function ShowcasesPage() {
                 className="text-gray-600 hover:text-gray-900 flex items-center transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 mr-1" />
-                Voltar
+                {t('frontend.showcases.back')}
               </button>
             )}
             <h1 className="text-2xl font-bold text-gray-900">
-              {viewMode === 'listing' && 'Vitrines'}
+              {viewMode === 'listing' && t('frontend.showcases.title')}
               {viewMode === 'display' && currentShowcase?.title}
             </h1>
           </div>
@@ -120,7 +124,7 @@ export default function ShowcasesPage() {
               className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105 flex items-center"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              Criar Vitrine
+              {t('frontend.showcases.createShowcase')}
             </button>
           )}
         </div>
@@ -172,7 +176,9 @@ export default function ShowcasesPage() {
                 <span className="text-red-400 text-xl">⚠️</span>
               </div>
               <div className="ml-3">
-                <h3 className="text-sm font-medium text-red-800">Erro</h3>
+                <h3 className="text-sm font-medium text-red-800">
+                  {t('frontend.showcases.error.title')}
+                </h3>
                 <div className="mt-2 text-sm text-red-700">{loading.error}</div>
                 <div className="mt-4">
                   <button
@@ -181,7 +187,7 @@ export default function ShowcasesPage() {
                     }
                     className="text-sm bg-red-100 text-red-800 px-3 py-1 rounded-md hover:bg-red-200 transition-colors"
                   >
-                    Fechar
+                    {t('frontend.showcases.error.close')}
                   </button>
                 </div>
               </div>

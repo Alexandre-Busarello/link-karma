@@ -3,6 +3,15 @@
   "include": [],
   "references": [
     {
+      "path": "../shared-types"
+    },
+    {
+      "path": "../auth"
+    },
+    {
+      "path": "../intl"
+    },
+    {
       "path": "./tsconfig.lib.json"
     },
     {

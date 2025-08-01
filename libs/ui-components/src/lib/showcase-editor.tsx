@@ -1,5 +1,6 @@
 'use client';
 
+import { useIntl } from '@linkkarma/intl';
 import {
   FAQ,
   LoadingState,
@@ -38,11 +39,31 @@ export function ShowcaseEditor({
   loading = { isLoading: false, error: null },
   userTier = 'basic',
 }: ShowcaseEditorProps) {
+  const { t } = useIntl();
   const [formData, setFormData] = useState<Partial<Showcase>>(showcase);
   const [activeTab, setActiveTab] = useState<'content' | 'media' | 'preview'>(
     'content'
   );
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+
+  // Get translated tabs
+  const tabs = [
+    {
+      id: 'content' as const,
+      label: t('frontend.showcases.editor.tabs.content'),
+      icon: FileText,
+    },
+    {
+      id: 'media' as const,
+      label: t('frontend.showcases.editor.tabs.media'),
+      icon: Image,
+    },
+    {
+      id: 'preview' as const,
+      label: t('frontend.showcases.editor.tabs.preview'),
+      icon: Eye,
+    },
+  ];
 
   useEffect(() => {
     setFormData(showcase);
@@ -147,30 +168,6 @@ export function ShowcaseEditor({
     }
   };
 
-  const tabs = [
-    {
-      id: 'content',
-      label: 'Conteúdo',
-      description: 'Edite o conteúdo da sua vitrine',
-      icon: FileText,
-      color: 'text-purple-600',
-    },
-    {
-      id: 'media',
-      label: 'Mídia',
-      description: 'Adicione imagens e vídeos',
-      icon: Image,
-      color: 'text-blue-600',
-    },
-    {
-      id: 'preview',
-      label: 'Visualizar',
-      description: 'Veja como ficará sua vitrine',
-      icon: Eye,
-      color: 'text-green-600',
-    },
-  ];
-
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       {/* Header Card */}
@@ -182,7 +179,7 @@ export function ShowcaseEditor({
             </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-900">
-                {formData.title || 'Nova Vitrine'}
+                {formData.title || t('frontend.showcases.editor.newShowcase')}
               </h1>
               <div className="flex items-center space-x-3 mt-1">
                 {formData.service_name && (
@@ -200,12 +197,12 @@ export function ShowcaseEditor({
                   {formData.status === 'published' ? (
                     <>
                       <CheckCircle className="w-3 h-3 mr-1" />
-                      Publicado
+                      {t('frontend.showcases.editor.status.published')}
                     </>
                   ) : (
                     <>
                       <AlertCircle className="w-3 h-3 mr-1" />
-                      Rascunho
+                      {t('frontend.showcases.editor.status.draft')}
                     </>
                   )}
                 </span>
@@ -220,7 +217,9 @@ export function ShowcaseEditor({
               className="inline-flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md"
             >
               <Save className="w-4 h-4 mr-2" />
-              {loading.isLoading ? 'Salvando...' : 'Salvar'}
+              {loading.isLoading
+                ? t('frontend.showcases.editor.actions.saving')
+                : t('frontend.showcases.editor.actions.save')}
             </button>
             <button
               onClick={handlePublish}
@@ -228,7 +227,9 @@ export function ShowcaseEditor({
               className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               <Send className="w-4 h-4 mr-2" />
-              {loading.isLoading ? 'Publicando...' : 'Publicar'}
+              {loading.isLoading
+                ? t('frontend.showcases.editor.actions.publishing')
+                : t('frontend.showcases.editor.actions.publish')}
             </button>
           </div>
         </div>
@@ -236,7 +237,7 @@ export function ShowcaseEditor({
         {hasUnsavedChanges && (
           <div className="mt-2 text-sm text-amber-600 flex items-center">
             <AlertCircle className="w-4 h-4 mr-1" />
-            Você tem alterações não salvas
+            {t('frontend.showcases.editor.unsavedChanges')}
           </div>
         )}
       </div>
@@ -277,7 +278,7 @@ export function ShowcaseEditor({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Título da Vitrine
+                  {t('frontend.showcases.editor.fields.title')}
                 </label>
                 <input
                   type="text"
@@ -289,12 +290,14 @@ export function ShowcaseEditor({
                     )
                   }
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  placeholder="Ex: Nubank - Conta Digital Sem Tarifas"
+                  placeholder={t(
+                    'frontend.showcases.editor.placeholders.title'
+                  )}
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Nome do Serviço
+                  {t('frontend.showcases.editor.fields.serviceName')}
                 </label>
                 <input
                   type="text"
@@ -303,7 +306,9 @@ export function ShowcaseEditor({
                     handleBasicInfoChange('service_name', e.target.value)
                   }
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  placeholder="Ex: Nubank"
+                  placeholder={t(
+                    'frontend.showcases.editor.placeholders.serviceName'
+                  )}
                 />
               </div>
             </div>
@@ -311,7 +316,7 @@ export function ShowcaseEditor({
             {/* Description */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Descrição Curta
+                {t('frontend.showcases.editor.fields.description')}
               </label>
               <textarea
                 value={formData.description || ''}
@@ -320,14 +325,16 @@ export function ShowcaseEditor({
                 }
                 rows={2}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Descrição concisa do serviço em 1-2 frases"
+                placeholder={t(
+                  'frontend.showcases.editor.placeholders.description'
+                )}
               />
             </div>
 
             {/* What Is */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                O que é?
+                {t('frontend.showcases.editor.fields.whatIs')}
               </label>
               <textarea
                 value={formData.content?.what_is || ''}
@@ -336,7 +343,7 @@ export function ShowcaseEditor({
                 }
                 rows={3}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Explique o que é o produto ou serviço de forma clara e atrativa"
+                placeholder={t('frontend.showcases.editor.placeholders.whatIs')}
               />
             </div>
 
@@ -345,14 +352,15 @@ export function ShowcaseEditor({
               <div className="flex items-center justify-between mb-2">
                 <label className="flex items-center text-sm font-medium text-gray-700">
                   <Star className="w-4 h-4 mr-2 text-yellow-500" />
-                  Vantagens Incríveis
+                  {t('frontend.showcases.editor.fields.advantages')}
                 </label>
                 <button
                   onClick={addAdvantage}
                   className="inline-flex items-center text-sm text-purple-600 hover:text-purple-700 font-medium"
                 >
                   <Plus className="w-4 h-4 mr-1" />
-                  Adicionar Vantagem
+                  {t('frontend.showcases.editor.actions.add')}{' '}
+                  {t('frontend.showcases.editor.fields.advantage')}
                 </button>
               </div>
               <div className="space-y-2">
@@ -366,7 +374,9 @@ export function ShowcaseEditor({
                           handleAdvantageChange(index, e.currentTarget.value)
                         }
                         className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                        placeholder={`Vantagem ${index + 1}`}
+                        placeholder={t(
+                          'frontend.showcases.editor.placeholders.advantage'
+                        )}
                       />
                       <button
                         onClick={() => removeAdvantage(index)}
@@ -385,14 +395,15 @@ export function ShowcaseEditor({
               <div className="flex items-center justify-between mb-2">
                 <label className="flex items-center text-sm font-medium text-gray-700">
                   <List className="w-4 h-4 mr-2 text-blue-500" />
-                  Guia Rápido (Passo a Passo)
+                  {t('frontend.showcases.editor.fields.quickGuide')}
                 </label>
                 <button
                   onClick={addQuickGuideStep}
                   className="inline-flex items-center text-sm text-purple-600 hover:text-purple-700 font-medium"
                 >
                   <Plus className="w-4 h-4 mr-1" />
-                  Adicionar Passo
+                  {t('frontend.showcases.editor.actions.add')}{' '}
+                  {t('frontend.showcases.editor.fields.step')}
                 </button>
               </div>
               <div className="space-y-2">
@@ -405,7 +416,9 @@ export function ShowcaseEditor({
                         handleQuickGuideChange(index, e.currentTarget.value)
                       }
                       className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                      placeholder={`Passo ${index + 1}`}
+                      placeholder={t(
+                        'frontend.showcases.editor.placeholders.guideStep'
+                      )}
                     />
                     <button
                       onClick={() => removeQuickGuideStep(index)}
@@ -423,14 +436,14 @@ export function ShowcaseEditor({
               <div className="flex items-center justify-between mb-2">
                 <label className="flex items-center text-sm font-medium text-gray-700">
                   <HelpCircle className="w-4 h-4 mr-2 text-green-500" />
-                  Perguntas Frequentes (FAQ)
+                  {t('frontend.showcases.editor.fields.faq')}
                 </label>
                 <button
                   onClick={addFAQItem}
                   className="inline-flex items-center text-sm text-purple-600 hover:text-purple-700 font-medium"
                 >
                   <Plus className="w-4 h-4 mr-1" />
-                  Adicionar FAQ
+                  {t('frontend.showcases.editor.actions.add')} FAQ
                 </button>
               </div>
               <div className="space-y-4">
@@ -462,7 +475,9 @@ export function ShowcaseEditor({
                           )
                         }
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                        placeholder="Pergunta"
+                        placeholder={t(
+                          'frontend.showcases.editor.placeholders.question'
+                        )}
                       />
                       <textarea
                         value={faq.answer}
@@ -475,7 +490,9 @@ export function ShowcaseEditor({
                         }
                         rows={2}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                        placeholder="Resposta"
+                        placeholder={t(
+                          'frontend.showcases.editor.placeholders.answer'
+                        )}
                       />
                     </div>
                   </div>
@@ -494,13 +511,13 @@ export function ShowcaseEditor({
               <Image className="w-8 h-8 text-blue-600" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Upload de Mídia
+              {t('frontend.showcases.editor.media.upload')}
             </h3>
             <p className="text-gray-600 mb-4">
-              Adicione imagens e vídeos para tornar sua vitrine mais atrativa
+              {t('frontend.showcases.editor.media.description')}
             </p>
             <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
-              Selecionar Arquivos
+              {t('frontend.showcases.editor.media.selectFiles')}
             </button>
           </div>
         </div>
@@ -513,15 +530,15 @@ export function ShowcaseEditor({
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-lg font-medium text-gray-900">
-                  Pré-visualização da Vitrine
+                  {t('frontend.showcases.editor.preview.title')}
                 </h3>
                 <p className="text-gray-600 text-sm mt-1">
-                  Veja como sua vitrine aparecerá para os usuários
+                  {t('frontend.showcases.editor.preview.description')}
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-500">
                 <Eye className="w-4 h-4" />
-                <span>Atualização em Tempo Real</span>
+                <span>{t('frontend.showcases.editor.preview.realTime')}</span>
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               </div>
             </div>
@@ -560,11 +577,10 @@ export function ShowcaseEditor({
                 <div className="text-center py-12">
                   <Eye className="w-12 h-12 text-gray-300 mx-auto mb-4" />
                   <h4 className="text-lg font-medium text-gray-900 mb-2">
-                    Preencha os campos para ver a pré-visualização
+                    {t('frontend.showcases.editor.preview.fillFields')}
                   </h4>
                   <p className="text-gray-600">
-                    Complete pelo menos o título e a descrição "O que é?" para
-                    visualizar sua vitrine
+                    {t('frontend.showcases.editor.preview.completeFields')}
                   </p>
                 </div>
               )}

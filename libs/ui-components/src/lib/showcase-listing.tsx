@@ -1,9 +1,9 @@
 'use client';
 
+import { useIntl } from '@linkkarma/intl';
 import {
   PaginatedResponse,
   Showcase,
-  ShowcaseCategory,
   ShowcaseFilters,
 } from '@linkkarma/shared-types';
 import {
@@ -45,76 +45,6 @@ interface ShowcaseListingProps {
   onLoadMore?: () => void;
 }
 
-const categoryOptions: {
-  value: ShowcaseCategory | '';
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-  color: string;
-}[] = [
-  {
-    value: '',
-    label: 'Todas as Categorias',
-    icon: Sparkles,
-    color: 'text-purple-600',
-  },
-  {
-    value: 'banking',
-    label: 'Bancos e Finanças',
-    icon: Building2,
-    color: 'text-blue-600',
-  },
-  {
-    value: 'transport',
-    label: 'Transporte',
-    icon: Car,
-    color: 'text-green-600',
-  },
-  {
-    value: 'food',
-    label: 'Alimentação',
-    icon: Pizza,
-    color: 'text-orange-600',
-  },
-  {
-    value: 'shopping',
-    label: 'Compras',
-    icon: ShoppingCart,
-    color: 'text-pink-600',
-  },
-  {
-    value: 'entertainment',
-    label: 'Entretenimento',
-    icon: Film,
-    color: 'text-red-600',
-  },
-  {
-    value: 'finance',
-    label: 'Investimentos',
-    icon: DollarSign,
-    color: 'text-emerald-600',
-  },
-  { value: 'health', label: 'Saúde', icon: Heart, color: 'text-rose-600' },
-  {
-    value: 'education',
-    label: 'Educação',
-    icon: BookOpen,
-    color: 'text-indigo-600',
-  },
-  {
-    value: 'technology',
-    label: 'Tecnologia',
-    icon: Laptop,
-    color: 'text-cyan-600',
-  },
-  { value: 'other', label: 'Outros', icon: Package, color: 'text-gray-600' },
-];
-
-const sortOptions = [
-  { value: 'newest', label: 'Mais Recentes', icon: Clock },
-  { value: 'popular', label: 'Mais Populares', icon: TrendingUp },
-  { value: 'featured', label: 'Em Destaque', icon: Star },
-];
-
 export function ShowcaseListing({
   showcases,
   loading = false,
@@ -123,12 +53,102 @@ export function ShowcaseListing({
   onLoadMore,
 }: ShowcaseListingProps) {
   const router = useRouter();
+  const { t } = useIntl();
   const [filters, setFilters] = useState<ShowcaseFilters>({
     category: undefined,
     search: '',
     sort: 'newest',
   });
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  // Get translated category options
+  const getCategoryOptions = () => [
+    {
+      value: '',
+      label: t('frontend.showcases.listing.categories.all'),
+      icon: Sparkles,
+      color: 'text-purple-600',
+    },
+    {
+      value: 'banking',
+      label: t('frontend.showcases.listing.categories.banking'),
+      icon: Building2,
+      color: 'text-blue-600',
+    },
+    {
+      value: 'transport',
+      label: t('frontend.showcases.listing.categories.transport'),
+      icon: Car,
+      color: 'text-green-600',
+    },
+    {
+      value: 'food',
+      label: t('frontend.showcases.listing.categories.food'),
+      icon: Pizza,
+      color: 'text-orange-600',
+    },
+    {
+      value: 'shopping',
+      label: t('frontend.showcases.listing.categories.shopping'),
+      icon: ShoppingCart,
+      color: 'text-pink-600',
+    },
+    {
+      value: 'entertainment',
+      label: t('frontend.showcases.listing.categories.entertainment'),
+      icon: Film,
+      color: 'text-red-600',
+    },
+    {
+      value: 'finance',
+      label: t('frontend.showcases.listing.categories.finance'),
+      icon: DollarSign,
+      color: 'text-emerald-600',
+    },
+    {
+      value: 'health',
+      label: t('frontend.showcases.listing.categories.health'),
+      icon: Heart,
+      color: 'text-rose-600',
+    },
+    {
+      value: 'education',
+      label: t('frontend.showcases.listing.categories.education'),
+      icon: BookOpen,
+      color: 'text-indigo-600',
+    },
+    {
+      value: 'technology',
+      label: t('frontend.showcases.listing.categories.technology'),
+      icon: Laptop,
+      color: 'text-cyan-600',
+    },
+    {
+      value: 'other',
+      label: t('frontend.showcases.listing.categories.other'),
+      icon: Package,
+      color: 'text-gray-600',
+    },
+  ];
+
+  // Get translated sort options
+  const getSortOptions = () => [
+    {
+      value: 'newest',
+      label: t('frontend.showcases.listing.sort.newest'),
+      icon: Clock,
+    },
+    {
+      value: 'popular',
+      label: t('frontend.showcases.listing.sort.popular'),
+      icon: TrendingUp,
+    },
+    {
+      value: 'featured',
+      label: t('frontend.showcases.listing.sort.featured'),
+      icon: Star,
+    },
+  ];
 
   useEffect(() => {
     onFiltersChange(filters);
@@ -170,7 +190,7 @@ export function ShowcaseListing({
   const ShowcaseCard = ({ showcase }: { showcase: Showcase }) => {
     const isFeatured =
       showcase.featured_until && new Date(showcase.featured_until) > new Date();
-    const categoryOption = categoryOptions.find(
+    const categoryOption = getCategoryOptions().find(
       (cat) => cat.value === showcase.category
     );
     const IconComponent = categoryOption?.icon || Package;
@@ -193,7 +213,7 @@ export function ShowcaseListing({
           <div className="absolute top-4 right-4 z-20">
             <div className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-semibold rounded-full shadow-lg">
               <Star className="w-3 h-3 fill-current" />
-              Destaque
+              {t('frontend.showcases.listing.badges.featured')}
             </div>
           </div>
         )}
@@ -247,7 +267,8 @@ export function ShowcaseListing({
               }`}
             >
               <IconComponent className="w-3 h-3" />
-              {categoryOption?.label || 'Outros'}
+              {categoryOption?.label ||
+                t('frontend.showcases.listing.categories.other')}
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-500">
               <Calendar className="w-3 h-3" />
@@ -286,7 +307,9 @@ export function ShowcaseListing({
               </span>
             </div>
             <div className="flex items-center gap-1 text-sm font-medium text-purple-600 group-hover:text-purple-700 transition-colors duration-200">
-              <span>Ver Vitrine</span>
+              <span>
+                {t('frontend.showcases.listing.actions.viewShowcase')}
+              </span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" />
             </div>
           </div>
@@ -298,7 +321,7 @@ export function ShowcaseListing({
   const ShowcaseListItem = ({ showcase }: { showcase: Showcase }) => {
     const isFeatured =
       showcase.featured_until && new Date(showcase.featured_until) > new Date();
-    const categoryOption = categoryOptions.find(
+    const categoryOption = getCategoryOptions().find(
       (cat) => cat.value === showcase.category
     );
     const IconComponent = categoryOption?.icon || Package;
@@ -350,12 +373,13 @@ export function ShowcaseListing({
                   }`}
                 >
                   <IconComponent className="w-3 h-3" />
-                  {categoryOption?.label || 'Outros'}
+                  {categoryOption?.label ||
+                    t('frontend.showcases.listing.categories.other')}
                 </div>
                 {isFeatured && (
                   <div className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-semibold rounded-full">
                     <Star className="w-3 h-3 fill-current" />
-                    Destaque
+                    {t('frontend.showcases.listing.badges.featured')}
                   </div>
                 )}
                 {showcase.karma_boost > 0 && (
@@ -402,7 +426,9 @@ export function ShowcaseListing({
                 </span>
               </div>
               <div className="flex items-center gap-1 text-sm font-medium text-purple-600 group-hover:text-purple-700 transition-colors duration-200">
-                <span>Ver Vitrine</span>
+                <span>
+                  {t('frontend.showcases.listing.actions.viewShowcase')}
+                </span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" />
               </div>
             </div>
@@ -421,11 +447,10 @@ export function ShowcaseListing({
             <Sparkles className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-pink-900 bg-clip-text text-transparent mb-4">
-            Vitrines de Referral
+            {t('frontend.showcases.listing.title')}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Descubra as melhores ofertas curadas pela comunidade e ganhe com
-            suas indicações
+            {t('frontend.showcases.listing.subtitle')}
           </p>
         </div>
 
@@ -434,7 +459,7 @@ export function ShowcaseListing({
           <div className="flex items-center gap-3 mb-6">
             <Filter className="w-5 h-5 text-purple-600" />
             <h2 className="text-lg font-semibold text-gray-900">
-              Filtros e Busca
+              {t('frontend.showcases.listing.filters.title')}
             </h2>
           </div>
 
@@ -447,7 +472,7 @@ export function ShowcaseListing({
                   type="text"
                   value={filters.search || ''}
                   onChange={(e) => handleFilterChange('search', e.target.value)}
-                  placeholder="Buscar vitrines, serviços ou categorias..."
+                  placeholder={t('frontend.showcases.listing.filters.search')}
                   className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                 />
               </div>
@@ -463,7 +488,7 @@ export function ShowcaseListing({
                   }
                   className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900"
                 >
-                  {categoryOptions.map((option) => (
+                  {getCategoryOptions().map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
                     </option>
@@ -483,7 +508,7 @@ export function ShowcaseListing({
                   }
                   className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900"
                 >
-                  {sortOptions.map((option) => (
+                  {getSortOptions().map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
                     </option>
@@ -499,15 +524,16 @@ export function ShowcaseListing({
             <div className="flex items-center gap-2 mb-4 sm:mb-0">
               <Eye className="w-4 h-4 text-gray-500" />
               <span className="text-sm font-medium text-gray-700">
-                {showcases.pagination.total} vitrine
-                {showcases.pagination.total !== 1 ? 's' : ''} encontrada
-                {showcases.pagination.total !== 1 ? 's' : ''}
+                {showcases.pagination.total}{' '}
+                {showcases.pagination.total === 1
+                  ? t('frontend.showcases.listing.stats.found')
+                  : t('frontend.showcases.listing.stats.foundPlural')}
               </span>
             </div>
 
             <div className="flex items-center gap-3">
               <span className="text-sm font-medium text-gray-700">
-                Visualização:
+                {t('frontend.showcases.listing.filters.viewMode')}
               </span>
               <div className="flex items-center bg-gray-100 rounded-lg p-1">
                 <button
@@ -519,7 +545,7 @@ export function ShowcaseListing({
                   }`}
                 >
                   <Grid3X3 className="w-4 h-4" />
-                  Grade
+                  {t('frontend.showcases.listing.filters.grid')}
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
@@ -530,7 +556,7 @@ export function ShowcaseListing({
                   }`}
                 >
                   <List className="w-4 h-4" />
-                  Lista
+                  {t('frontend.showcases.listing.filters.list')}
                 </button>
               </div>
             </div>
@@ -544,10 +570,10 @@ export function ShowcaseListing({
               <Loader2 className="w-8 h-8 text-purple-600 animate-spin" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Carregando vitrines
+              {t('frontend.showcases.listing.loading.title')}
             </h3>
             <p className="text-gray-600">
-              Buscando as melhores ofertas para você...
+              {t('frontend.showcases.listing.loading.subtitle')}
             </p>
           </div>
         )}
@@ -559,11 +585,10 @@ export function ShowcaseListing({
               <Search className="w-10 h-10 text-gray-400" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Nenhuma vitrine encontrada
+              {t('frontend.showcases.listing.empty.title')}
             </h3>
             <p className="text-gray-600 max-w-md mx-auto leading-relaxed">
-              Tente ajustar os filtros de busca ou explore outras categorias
-              para descobrir ofertas incríveis
+              {t('frontend.showcases.listing.empty.subtitle')}
             </p>
           </div>
         )}
@@ -606,7 +631,7 @@ export function ShowcaseListing({
                     className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105 font-semibold shadow-lg"
                   >
                     <ArrowRight className="w-5 h-5" />
-                    Carregar Mais Vitrines
+                    {t('frontend.showcases.listing.actions.loadMore')}
                   </button>
                 </div>
               )}
@@ -616,10 +641,15 @@ export function ShowcaseListing({
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 text-sm text-gray-600">
                 <Eye className="w-4 h-4" />
                 <span>
-                  Página {showcases.pagination.page} de{' '}
-                  {showcases.pagination.totalPages} •
-                  {showcases.pagination.total} vitrine
-                  {showcases.pagination.total !== 1 ? 's' : ''} no total
+                  {t('frontend.showcases.listing.stats.page')}{' '}
+                  {showcases.pagination.page}{' '}
+                  {t('frontend.showcases.listing.stats.of')}{' '}
+                  {showcases.pagination.totalPages} •{' '}
+                  {showcases.pagination.total}{' '}
+                  {showcases.pagination.total === 1
+                    ? t('frontend.showcases.listing.stats.found')
+                    : t('frontend.showcases.listing.stats.foundPlural')}{' '}
+                  {t('frontend.showcases.listing.stats.total')}
                 </span>
               </div>
             </div>

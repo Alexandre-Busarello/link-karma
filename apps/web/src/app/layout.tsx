@@ -42,6 +42,10 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://linkkarma.com.br',
+    languages: {
+      pt: '/pt',
+      en: '/en',
+    },
   },
 };
 

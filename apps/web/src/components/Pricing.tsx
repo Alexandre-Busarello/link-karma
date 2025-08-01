@@ -16,55 +16,104 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+import { useIntl } from '@linkkarma/intl';
+
 export function Pricing() {
+  const { t } = useIntl();
   const plans = [
     {
-      name: 'Básico',
-      price: 'Grátis',
-      period: 'para sempre',
-      description: 'Perfeito para começar e testar a plataforma',
+      name: t('frontend.pricing.plans.basic.name'),
+      price: t('frontend.pricing.plans.basic.price'),
+      period: t('frontend.pricing.plans.basic.period'),
+      description: t('frontend.pricing.plans.basic.description'),
       popular: false,
       features: [
-        { icon: Sparkles, text: '1 Vitrine ativa', highlight: false },
-        { icon: Shield, text: '2 verificações IA por dia', highlight: false },
-        { icon: Image, text: '1 imagem de capa', highlight: false },
-        { icon: Users, text: 'Verificação comunitária', highlight: false },
         {
-          icon: Coins,
-          text: 'Compra de Karma Points avulsa',
+          icon: Sparkles,
+          text: t('frontend.pricing.plans.basic.features.activeShowcases'),
           highlight: false,
         },
-        { icon: Gift, text: 'Bônus: Primeira vitrine grátis', highlight: true },
+        {
+          icon: Shield,
+          text: t('frontend.pricing.plans.basic.features.aiVerifications'),
+          highlight: false,
+        },
+        {
+          icon: Image,
+          text: t('frontend.pricing.plans.basic.features.coverImage'),
+          highlight: false,
+        },
+        {
+          icon: Users,
+          text: t(
+            'frontend.pricing.plans.basic.features.communityVerification'
+          ),
+          highlight: false,
+        },
+        {
+          icon: Coins,
+          text: t('frontend.pricing.plans.basic.features.karmaPointsPurchase'),
+          highlight: false,
+        },
+        {
+          icon: Gift,
+          text: t('frontend.pricing.plans.basic.features.freeShowcaseBonus'),
+          highlight: true,
+        },
       ],
       limitations: [
-        'Máximo 6 Provas de Contribuição por dia',
-        'Máximo 90 Karma Points por dia (6 × 15)',
-        'Sem salário mensal de KP',
+        t('frontend.pricing.plans.basic.limitations.0'),
+        t('frontend.pricing.plans.basic.limitations.1'),
+        t('frontend.pricing.plans.basic.limitations.2'),
       ],
-      cta: 'Começar Grátis',
+      cta: t('frontend.pricing.plans.basic.cta'),
       ctaLink: '/auth/signup',
     },
     {
-      name: 'Pro',
-      price: 'R$ 29',
-      period: '/mês',
-      description: 'Para quem quer maximizar seus resultados com referrals',
+      name: t('frontend.pricing.plans.pro.name'),
+      price: t('frontend.pricing.plans.pro.price'),
+      period: t('frontend.pricing.plans.pro.period'),
+      description: t('frontend.pricing.plans.pro.description'),
       popular: true,
       features: [
-        { icon: Crown, text: 'Até 10 Vitrines ativas', highlight: true },
-        { icon: Zap, text: '30 verificações IA por dia', highlight: true },
-        { icon: Coins, text: '500 Karma Points mensais', highlight: true },
-        { icon: Image, text: 'Galeria com 5 imagens', highlight: true },
-        { icon: Video, text: '1 vídeo incorporado', highlight: true },
-        { icon: Star, text: 'Desconto em pacotes de KP', highlight: true },
+        {
+          icon: Crown,
+          text: t('frontend.pricing.plans.pro.features.activeShowcases'),
+          highlight: true,
+        },
+        {
+          icon: Zap,
+          text: t('frontend.pricing.plans.pro.features.aiVerifications'),
+          highlight: true,
+        },
+        {
+          icon: Coins,
+          text: t('frontend.pricing.plans.pro.features.monthlyKarmaPoints'),
+          highlight: true,
+        },
+        {
+          icon: Image,
+          text: t('frontend.pricing.plans.pro.features.imageGallery'),
+          highlight: true,
+        },
+        {
+          icon: Video,
+          text: t('frontend.pricing.plans.pro.features.videoEmbed'),
+          highlight: true,
+        },
+        {
+          icon: Star,
+          text: t('frontend.pricing.plans.pro.features.karmaPointsDiscount'),
+          highlight: true,
+        },
       ],
       benefits: [
-        'Até 30 Provas de Contribuição por dia',
-        'Até 450 Karma Points por dia (30 × 15)',
-        'Limites maiores para verificação IA',
-        'Suporte prioritário',
+        t('frontend.pricing.plans.pro.benefits.0'),
+        t('frontend.pricing.plans.pro.benefits.1'),
+        t('frontend.pricing.plans.pro.benefits.2'),
+        t('frontend.pricing.plans.pro.benefits.3'),
       ],
-      cta: 'Assinar Pro',
+      cta: t('frontend.pricing.plans.pro.cta'),
       ctaLink: '/auth/signup?plan=pro',
     },
   ];
@@ -78,15 +127,16 @@ export function Pricing() {
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-100 rounded-full text-blue-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             <Crown className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-            Planos e Preços
+            {t('frontend.pricing.badge')}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0">
-            Escolha o Plano{' '}
-            <span className="text-blue-600">Ideal para Você</span>
-          </h2>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0"
+            dangerouslySetInnerHTML={{
+              __html: t('frontend.pricing.title'),
+            }}
+          ></h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Comece grátis e evolua conforme suas necessidades. Todos os planos
-            incluem nossa IA avançada e sistema de verificação de segurança.
+            {t('frontend.pricing.description')}
           </p>
         </div>
 
@@ -104,7 +154,7 @@ export function Pricing() {
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                     <Star className="w-4 h-4 inline mr-1" />
-                    Mais Popular
+                    {t('frontend.pricing.plans.pro.popularBadge')}
                   </div>
                 </div>
               )}
@@ -131,7 +181,7 @@ export function Pricing() {
                 {/* Features */}
                 <div className="space-y-4 mb-6">
                   <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
-                    Recursos Inclusos
+                    {t('frontend.pricing.featuresIncluded')}
                   </h4>
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
@@ -166,7 +216,9 @@ export function Pricing() {
                 {(plan.benefits || plan.limitations) && (
                   <div className="space-y-4 mb-6">
                     <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
-                      {plan.benefits ? 'Benefícios Extras' : 'Limitações'}
+                      {plan.benefits
+                        ? t('frontend.pricing.extraBenefits')
+                        : t('frontend.pricing.limitations')}
                     </h4>
                     <ul className="space-y-2">
                       {(plan.benefits || plan.limitations)?.map(
@@ -219,11 +271,10 @@ export function Pricing() {
                 <Coins className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Por que os Karma Points são Valiosos?
+                {t('frontend.pricing.karmaPointsExplanation.title')}
               </h3>
               <p className="text-gray-700 max-w-2xl mx-auto">
-                Os Karma Points são a moeda interna que impulsiona suas vitrines
-                e aumenta sua visibilidade na plataforma.
+                {t('frontend.pricing.karmaPointsExplanation.description')}
               </p>
             </div>
 
@@ -233,10 +284,14 @@ export function Pricing() {
                   <Zap className="w-6 h-6 text-yellow-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  Impulsionar Vitrine
+                  {t(
+                    'frontend.pricing.karmaPointsExplanation.uses.boostShowcase.title'
+                  )}
                 </h4>
                 <p className="text-sm text-gray-600">
-                  25 KP = Apareça no topo por 24h
+                  {t(
+                    'frontend.pricing.karmaPointsExplanation.uses.boostShowcase.description'
+                  )}
                 </p>
               </div>
 
@@ -245,10 +300,14 @@ export function Pricing() {
                   <Star className="w-6 h-6 text-orange-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  Destacar Vitrine
+                  {t(
+                    'frontend.pricing.karmaPointsExplanation.uses.featureShowcase.title'
+                  )}
                 </h4>
                 <p className="text-sm text-gray-600">
-                  100 KP = Destaque especial por 7 dias
+                  {t(
+                    'frontend.pricing.karmaPointsExplanation.uses.featureShowcase.description'
+                  )}
                 </p>
               </div>
 
@@ -257,20 +316,25 @@ export function Pricing() {
                   <Crown className="w-6 h-6 text-purple-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  Salário Mensal Pro
+                  {t(
+                    'frontend.pricing.karmaPointsExplanation.uses.proSalary.title'
+                  )}
                 </h4>
                 <p className="text-sm text-gray-600">
-                  500 KP automáticos = R$ 125 em valor
+                  {t(
+                    'frontend.pricing.karmaPointsExplanation.uses.proSalary.description'
+                  )}
                 </p>
               </div>
             </div>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-gray-600">
-                <strong>Plano Pro:</strong> Receba 500 KP mensais (equivalente a
-                R$ 125 em impulsionamentos) + desconto na compra de pacotes
-                extras
-              </p>
+              <p
+                className="text-sm text-gray-600"
+                dangerouslySetInnerHTML={{
+                  __html: t('frontend.pricing.karmaPointsExplanation.proNote'),
+                }}
+              ></p>
             </div>
           </div>
         </div>
@@ -279,25 +343,24 @@ export function Pricing() {
         <div className="mt-12 sm:mt-16 text-center">
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Dúvidas sobre os Planos?
+              {t('frontend.pricing.faq.title')}
             </h3>
             <p className="text-gray-600 mb-6">
-              Todos os planos incluem nossa IA avançada, sistema de verificação
-              de segurança e acesso à comunidade.
+              {t('frontend.pricing.faq.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="#faq"
                 className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-sm sm:text-base w-full sm:w-auto justify-center"
               >
-                Ver FAQ Completo
+                {t('frontend.pricing.faq.viewFullFaq')}
               </Link>
               <Link
                 href="/auth/signup"
                 className="inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base w-full sm:w-auto justify-center"
               >
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Começar Agora
+                {t('frontend.pricing.faq.startNow')}
               </Link>
             </div>
           </div>

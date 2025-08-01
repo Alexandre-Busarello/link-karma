@@ -1,6 +1,7 @@
 'use client';
 
 import { mockShowcaseService } from '@linkkarma/db';
+import { useIntl } from '@linkkarma/intl';
 import { Showcase } from '@linkkarma/shared-types';
 import { ArrowRight, Shield, Sparkles, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
@@ -25,6 +26,7 @@ const generateShowcaseUrl = (showcase: Showcase) => {
 };
 
 export function RecentShowcases() {
+  const { t } = useIntl();
   const [showcases, setShowcases] = useState<Showcase[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -59,15 +61,13 @@ export function RecentShowcases() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full text-green-800 text-sm font-medium mb-6">
               <TrendingUp className="w-4 h-4 mr-2" />
-              Vitrines em Destaque
+              {t('frontend.showcases.recent.title')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Últimas{' '}
-              <span className="text-green-600">Vitrines Verificadas</span>
+              {t('frontend.showcases.recent.subtitle')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Veja as vitrines mais recentes criadas pela nossa comunidade,
-              todas verificadas e aprovadas pelo nosso sistema de segurança.
+              {t('frontend.showcases.recent.description')}
             </p>
           </div>
 
@@ -96,14 +96,13 @@ export function RecentShowcases() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full text-green-800 text-sm font-medium mb-6">
             <TrendingUp className="w-4 h-4 mr-2" />
-            Vitrines em Destaque
+            {t('frontend.showcases.recent.title')}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Últimas <span className="text-green-600">Vitrines Verificadas</span>
+            {t('frontend.showcases.recent.subtitle')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Veja as vitrines mais recentes criadas pela nossa comunidade, todas
-            verificadas e aprovadas pelo nosso sistema de segurança.
+            {t('frontend.showcases.recent.description')}
           </p>
         </div>
 
@@ -128,12 +127,10 @@ export function RecentShowcases() {
             <div className="text-center">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Quer Ver Mais Vitrines?
+                  {t('frontend.showcases.recent.wantSeeMore')}
                 </h3>
                 <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                  Explore nossa galeria completa com centenas de vitrines
-                  criadas pela comunidade. Encontre inspiração e veja o que é
-                  possível criar com nossa IA.
+                  {t('frontend.showcases.recent.exploreGallery')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
@@ -141,7 +138,7 @@ export function RecentShowcases() {
                     className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
                   >
                     <TrendingUp className="w-5 h-5 mr-2" />
-                    Ver Todas as Vitrines
+                    {t('frontend.showcases.recent.viewAll')}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                   <Link
@@ -149,7 +146,7 @@ export function RecentShowcases() {
                     className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
                   >
                     <Sparkles className="w-5 h-5 mr-2" />
-                    Criar Minha Vitrine
+                    {t('frontend.showcases.recent.createMyShowcase')}
                   </Link>
                 </div>
               </div>
@@ -162,18 +159,17 @@ export function RecentShowcases() {
               <Shield className="w-12 h-12 text-gray-400" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Nenhuma Vitrine Encontrada
+              {t('frontend.showcases.recent.empty')}
             </h3>
             <p className="text-gray-600 mb-8 max-w-md mx-auto">
-              Ainda não temos vitrines verificadas para exibir. Seja o primeiro
-              a criar uma vitrine incrível!
+              {t('frontend.showcases.recent.emptyFirstCreate')}
             </p>
             <Link
               href="/auth/signup"
               className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
             >
               <Sparkles className="w-5 h-5 mr-2" />
-              Criar Primeira Vitrine
+              {t('frontend.showcases.recent.createFirstShowcase')}
             </Link>
           </div>
         )}

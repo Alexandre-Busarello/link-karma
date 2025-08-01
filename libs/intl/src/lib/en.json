@@ -1,0 +1,759 @@
+{
+  "frontend": {
+    "landing": {
+      "hero": {
+        "title": "Transform Your",
+        "titleHighlight": "Referral Links",
+        "titleEnd": "into Professional Showcases",
+        "subtitle": "The first platform that combines advanced AI, Karma Points system, and security verification to maximize your conversions by up to 300%",
+        "ctaPrimary": "Get Started Free",
+        "ctaSecondary": "View Showcases",
+        "stats": {
+          "firstShowcase": "1st Showcase",
+          "firstShowcaseDesc": "100% Free",
+          "aiAdvanced": "Advanced AI",
+          "aiAdvancedDesc": "Automatic Creation",
+          "verification": "Verification",
+          "verificationDesc": "Anti-Fraud"
+        }
+      },
+      "navigation": {
+        "home": "Home",
+        "howItWorks": "How It Works",
+        "showcasesAI": "AI Showcases",
+        "pricing": "Pricing",
+        "team": "Team",
+        "faq": "FAQ",
+        "myShowcases": "My Showcases",
+        "createShowcase": "Create Showcase",
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "signOut": "Sign Out",
+        "user": "User",
+        "hints": {
+          "viewFeatured": "View featured showcases"
+        }
+      },
+      "features": {
+        "aiPowered": "AI Created",
+        "googleGemini": "Powered by Google Gemini AI",
+        "googleGeminiDesc": "We use Google's most advanced AI to create optimized and persuasive content, increasing your conversions by up to 300%.",
+        "howItWorks": {
+          "title": "How It Works",
+          "subtitle": "Transform any referral link into a professional showcase in seconds. Our AI analyzes the service and creates optimized content that converts up to 300% more than simple links.",
+          "step1": {
+            "title": "Paste Your Link",
+            "description": "Our AI automatically analyzes the service and extracts relevant information"
+          },
+          "step2": {
+            "title": "AI Creates Content",
+            "description": "Title, description, advantages, FAQ, and step-by-step guide generated automatically"
+          },
+          "step3": {
+            "title": "Publish and Share",
+            "description": "Your showcase becomes available with a unique URL optimized for conversion"
+          }
+        }
+      },
+      "finalCta": {
+        "title": "Ready to Revolutionize Your Referrals?",
+        "subtitle": "Join the first platform that combines AI, security, and fair economy. Your first showcase is 100% free!",
+        "cta": "Get Started Now - It's Free",
+        "stats": {
+          "freeShowcase": "First Showcase Free",
+          "autoVerification": "Automatic Verification",
+          "conversionIncrease": "Conversion Increase"
+        },
+        "actions": {
+          "createAccount": "Create Free Account",
+          "exploreShowcases": "Explore Showcases"
+        }
+      },
+      "coreLoop": {
+        "badge": "The Heart of LinkKarma",
+        "title": "<span class=\"text-green-600\">Proof of Contribution</span> System",
+        "description": "The first referral ecosystem based on <strong>mutual contribution</strong>. To post, you need to contribute first.",
+        "howItWorks": "How It Works",
+        "step1": {
+          "title": "Use a Referral Link",
+          "description": "Sign up for a service through a platform link",
+          "reward": "+1 Contribution Credit + 15 Karma Points"
+        },
+        "step2": {
+          "title": "Help with Verification",
+          "description": "Analyze requests in the community verification queue",
+          "reward": "+0.5 Contribution Credit + 3 Karma Points"
+        },
+        "step3": {
+          "title": "Publish Your Showcase",
+          "description": "With 3 credits, unlock a new showcase slot",
+          "reward": "Professional Showcase Unlocked!"
+        },
+        "merit": "100% Merit-Based System",
+        "benefits": {
+          "quality": {
+            "title": "Guaranteed Quality",
+            "description": "Only contributing users can post, eliminating spam and ensuring high-quality links."
+          },
+          "community": {
+            "title": "Active Community",
+            "description": "Community verification system creates a network of engaged and trustworthy users."
+          },
+          "growth": {
+            "title": "Sustainable Growth",
+            "description": "Scalable model that grows naturally with community participation."
+          }
+        }
+      },
+      "aiShowcases": {
+        "badge": "Cutting-Edge Technology",
+        "title": "Smart Showcases with <span class=\"text-purple-600\">Advanced AI</span>",
+        "description": "Transform any referral link into a <strong>professional showcase</strong> in seconds. Our AI analyzes the service and creates optimized content that <strong>converts up to 300% more</strong> than simple links.",
+        "interactiveHint": "👆 Click to interact",
+        "professionalShowcase": "Your Professional Showcase in Just 3 Steps",
+        "poweredByGemini": "Powered by Google Gemini AI",
+        "geminiDescription": "We use Google's most advanced AI to create optimized and persuasive content, increasing your conversions by up to 300%.",
+        "advancedFeatures": {
+          "security": {
+            "title": "Security Verification",
+            "description": "Every link goes through automatic anti-fraud verification before publication"
+          },
+          "analytics": {
+            "title": "Integrated Analytics",
+            "description": "Track clicks, conversions, and performance of each showcase in real-time"
+          },
+          "seo": {
+            "title": "SEO Optimized",
+            "description": "Showcases optimized for search engines, increasing your visibility"
+          }
+        },
+        "cta": {
+          "title": "Ready to Create Your First Showcase?",
+          "description": "See how your showcases look in practice. Explore our gallery of real showcases created by users like you and discover the power of AI in action.",
+          "exploreReal": "Explore Real Showcases",
+          "createMine": "Create My Showcase"
+        }
+      },
+      "karmaPoints": {
+        "badge": "Gamified Economy",
+        "title": "System of <span class=\"text-yellow-600\">Karma Points</span>",
+        "description": "An internal economy based on <strong>real contributions</strong>. Earn Karma Points by participating in the community and use them to boost your showcases.",
+        "balance": {
+          "title": "Your Karma Balance",
+          "amount": "1,250 KP"
+        },
+        "activities": {
+          "verificationApproved": "Verification approved",
+          "helpedVerification": "Helped with verification",
+          "showcaseFeatured": "Showcase featured"
+        },
+        "actions": {
+          "boost": "Boost (25 KP)",
+          "feature": "Feature (100 KP)"
+        },
+        "howToEarn": {
+          "title": "How to Earn Karma Points",
+          "useReferrals": {
+            "title": "Use Referral Links",
+            "description": "+15 KP per approved verification"
+          },
+          "communityVerification": {
+            "title": "Community Verification",
+            "description": "+3 KP per correct analysis"
+          },
+          "proPlan": {
+            "title": "Pro Plan",
+            "description": "Monthly KP salary"
+          }
+        },
+        "howToUse": {
+          "title": "How to Use Karma Points",
+          "boostShowcase": {
+            "title": "Boost Showcase",
+            "description": "25 KP - Appear at the top for 24h"
+          },
+          "featureShowcase": {
+            "title": "Feature Showcase",
+            "description": "100 KP - Special highlight for 7 days"
+          }
+        },
+        "fairEconomy": {
+          "title": "Fair and Transparent Economy",
+          "description": "Unlike other platforms, on LinkKarma you earn Karma Points through <strong>real contributions</strong> to the community, not just by paying."
+        }
+      },
+      "security": {
+        "badge": "Maximum Security",
+        "title": "System of <span class=\"text-red-600\">Hybrid Security</span>",
+        "description": "Multi-layered protection with <strong>AI + Divulgator + Community</strong>. Dynamic Trust Score and anti-fraud verification ensure a safe environment.",
+        "aiVerification": {
+          "title": "Multimodal AI",
+          "features": {
+            "automaticAnalysis": "Automatic evidence analysis",
+            "fraudDetection": "Fraud pattern detection",
+            "instantApproval": "Instant approval (>90% confidence)"
+          },
+          "badge": "Google Gemini AI"
+        },
+        "divulgatorVerification": {
+          "title": "Divulgator",
+          "features": {
+            "manualAnalysis": "Manual analysis in 24h",
+            "specificKnowledge": "Specific service knowledge",
+            "agilityBonus": "Agility bonus"
+          },
+          "badge": "Human Expert"
+        },
+        "communityVerification": {
+          "title": "Community",
+          "features": {
+            "trustedUsers": "Trusted users (Trust Score >400)",
+            "votingConsensus": "Voting consensus",
+            "infiniteScalability": "Infinite scalability"
+          },
+          "badge": "Collective Wisdom"
+        },
+        "trustScore": {
+          "title": "Trust Score System",
+          "description": "Dynamic score from 0 to 1000 that reflects each user's trustworthiness. The higher the score, the more privileges and responsibilities on the platform.",
+          "activities": {
+            "aiApproval": "AI-approved verification",
+            "communityAnalysis": "Correct community analysis",
+            "fraudAttempt": "Fraud attempt"
+          },
+          "points": {
+            "aiApproval": "+10 points",
+            "communityAnalysis": "+3 points",
+            "fraudAttempt": "-50 points"
+          },
+          "label": "Trust Score",
+          "status": {
+            "trusted": "Trusted User",
+            "canParticipate": "Can participate in community verification"
+          }
+        }
+      }
+    },
+    "faq": {
+      "badge": "Frequently Asked Questions",
+      "title": "Clear Your Doubts",
+      "subtitle": "Clear Your <span class=\"text-blue-600\">Doubts</span>",
+      "description": "Everything you need to know about LinkKarma",
+      "questions": [
+        {
+          "question": "What is the Proof of Contribution system?",
+          "answer": "It's the heart of LinkKarma. To post a showcase, you need to contribute to the community by using referral links or helping with community verification. This ensures quality and eliminates spam. You need 3 Contribution Credits to unlock a new showcase slot."
+        },
+        {
+          "question": "How does AI showcase creation work?",
+          "answer": "Our AI automatically analyzes your referral link, extracts service information, and creates a professional showcase with title, description, advantages, FAQ, and step-by-step guide. We use Google Gemini AI to ensure high-quality content. You can customize everything before publishing."
+        },
+        {
+          "question": "What are Karma Points and how to use them?",
+          "answer": "Karma Points (KP) are LinkKarma's internal currency. You earn KP by contributing to the community (15 KP per referral use, 10 KP per verification). Use KP to boost your showcases (25 KP = 24h at the top) or feature them (100 KP = 7 days highlighted)."
+        },
+        {
+          "question": "How does security verification work?",
+          "answer": "We have a hybrid system: our AI does the first analysis checking sources like Trustpilot, Reclame Aqui, and app stores. Then, the community can do additional verifications. Showcases only go public after approval in the security system."
+        },
+        {
+          "question": "Can I cancel my subscription anytime?",
+          "answer": "Yes! You can cancel your Pro subscription anytime. Your showcases will remain active until the end of the paid period, then return to free plan limitations."
+        },
+        {
+          "question": "How does the anti-spam system work?",
+          "answer": "The Proof of Contribution system is our main anti-spam mechanism. Additionally, we have mandatory security verification, community moderation, and daily action limits to prevent abusive behavior."
+        }
+      ],
+      "contact": {
+        "title": "Still have questions?",
+        "description": "Our team is ready to help you get started with LinkKarma",
+        "email": "Contact Us",
+        "examples": "See Examples"
+      }
+    },
+    "pricing": {
+      "badge": "Plans & Pricing",
+      "title": "Choose the <span class=\"text-blue-600\">Perfect Plan for You</span>",
+      "description": "Start free and scale as your needs grow. All plans include our advanced AI and security verification system.",
+      "plans": {
+        "basic": {
+          "name": "Basic",
+          "price": "Free",
+          "period": "forever",
+          "description": "Perfect to get started and test the platform",
+          "popular": false,
+          "features": {
+            "activeShowcases": "1 Active showcase",
+            "aiVerifications": "2 AI verifications per day",
+            "coverImage": "1 cover image",
+            "communityVerification": "Community verification",
+            "karmaPointsPurchase": "Individual Karma Points purchase",
+            "freeShowcaseBonus": "Bonus: First showcase free"
+          },
+          "limitations": {
+            "0": "Maximum 6 Proof of Contributions per day",
+            "1": "Maximum 90 Karma Points per day (6 × 15)",
+            "2": "No monthly KP salary"
+          },
+          "cta": "Start Free"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "$29",
+          "period": "/month",
+          "description": "For those who want to maximize their referral results",
+          "popular": true,
+          "popularBadge": "Most Popular",
+          "features": {
+            "activeShowcases": "Up to 10 active showcases",
+            "aiVerifications": "30 AI verifications per day",
+            "monthlyKarmaPoints": "500 monthly Karma Points",
+            "imageGallery": "Gallery with 5 images",
+            "videoEmbed": "1 embedded video",
+            "karmaPointsDiscount": "Discount on KP packages"
+          },
+          "benefits": {
+            "0": "Up to 30 Proof of Contributions per day",
+            "1": "Up to 450 Karma Points per day (30 × 15)",
+            "2": "Higher limits for AI verification",
+            "3": "Priority support"
+          },
+          "cta": "Subscribe Pro"
+        }
+      },
+      "featuresIncluded": "Features Included",
+      "extraBenefits": "Extra Benefits",
+      "limitations": "Limitations",
+      "karmaPointsExplanation": {
+        "title": "Why are Karma Points Valuable?",
+        "description": "Karma Points are the internal currency that boosts your showcases and increases your visibility on the platform.",
+        "uses": {
+          "boostShowcase": {
+            "title": "Boost Showcase",
+            "description": "25 KP = Appear at the top for 24h"
+          },
+          "featureShowcase": {
+            "title": "Feature Showcase",
+            "description": "100 KP = Special highlight for 7 days"
+          },
+          "proSalary": {
+            "title": "Monthly Pro Salary",
+            "description": "500 automatic KP = $125 in value"
+          }
+        },
+        "proNote": "<strong>Pro Plan:</strong> Receive 500 monthly KP (equivalent to $125 in boosts) + discount on extra packages"
+      },
+      "faq": {
+        "title": "Questions about the Plans?",
+        "description": "All plans include our advanced AI, security verification system, and community access.",
+        "viewFullFaq": "View Full FAQ",
+        "startNow": "Start Now"
+      }
+    },
+    "team": {
+      "badge": "Meet the Team",
+      "title": "Developed by <span class=\"text-blue-600\">Experts</span>",
+      "description": "LinkKarma is a solo project developed with passion and technical expertise, combining years of experience in software engineering and technical leadership.",
+      "founder": {
+        "title": "Developer & Founder",
+        "position": "Technical Manager at Descomplica",
+        "experience": "10+ years experience",
+        "usersManaged": "70k+ users managed",
+        "awsSpecialist": "AWS Specialist",
+        "location": "Blumenau, SC - Brazil"
+      },
+      "experience": {
+        "title": "Professional Experience",
+        "positions": {
+          "technicalManager": {
+            "title": "Technical Manager",
+            "company": "Descomplica (2024 - current)",
+            "description": "Leadership of UEE and SRE teams, AWS infrastructure modernization, 20% cloud cost reduction."
+          },
+          "technicalLead": {
+            "title": "Technical Lead",
+            "company": "Descomplica (2023 - 2024)",
+            "description": "Legacy platform transition to modern EKS architecture, serving 70k+ students."
+          },
+          "seniorEngineer": {
+            "title": "Senior Engineer",
+            "company": "Descomplica (2019 - 2023)",
+            "description": "Microservices development, DDD, React microfrontends, DevOps and infrastructure as code."
+          },
+          "developer": {
+            "title": "Developer",
+            "company": "IBM, Seventh, Senior (2013 - 2019)",
+            "description": "Full-stack development, .NET, Angular, critical systems and enterprise solutions."
+          }
+        }
+      },
+      "skills": {
+        "title": "Technical Specialties",
+        "items": [
+          "Node.js",
+          "React",
+          "TypeScript",
+          "AWS",
+          "Kubernetes",
+          "Docker",
+          "Terraform",
+          "PostgreSQL",
+          "Microservices",
+          "DevOps",
+          "CI/CD",
+          "Monitoring",
+          "DDD",
+          "Architecture",
+          "Leadership",
+          "Mentoring"
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "degree": "Computer Science",
+        "university": "FURB - University of Blumenau (2008-2014)"
+      },
+      "achievements": {
+        "title": "Achievements",
+        "items": [
+          "20% AWS cost reduction at Descomplica",
+          "Migration of 70k+ users to new architecture",
+          "Leadership of multidisciplinary teams",
+          "Implementation of modern DevOps culture"
+        ]
+      },
+      "vision": {
+        "title": "Vision for LinkKarma",
+        "description": "\"After years leading teams and building platforms that serve tens of thousands of users, I decided to apply all this experience to a personal project. LinkKarma represents the convergence of everything I've learned about scalable architecture, user experience, and building sustainable digital communities.\""
+      },
+      "contact": {
+        "viewFullResume": "View Full Resume",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+      },
+      "stats": {
+        "experience": {
+          "value": "10+",
+          "label": "Years of Experience"
+        },
+        "users": {
+          "value": "70k+",
+          "label": "Users Managed"
+        },
+        "costReduction": {
+          "value": "20%",
+          "label": "AWS Cost Reduction"
+        }
+      }
+    },
+    "onboarding": {
+      "title": "Initial Setup",
+      "skip": "Skip",
+      "previous": "Previous",
+      "next": "Next",
+      "start": "Start",
+      "progress": {
+        "step": "Step {current} of {total}",
+        "complete": "{percent}% complete"
+      },
+      "steps": {
+        "welcome": {
+          "title": "Welcome to LinkKarma!",
+          "description": "Your journey to maximize your referral earnings starts here",
+          "welcomeBonus": {
+            "title": "🎉 Welcome Bonus",
+            "description": "Your first showcase is <strong>100% FREE</strong>!",
+            "note": "Start sharing your referral links at no cost"
+          },
+          "benefits": {
+            "conversions": {
+              "title": "More Conversions",
+              "description": "Attractive showcases convert up to 3x more"
+            },
+            "aiVerification": {
+              "title": "AI Verification",
+              "description": "Links verified automatically"
+            },
+            "community": {
+              "title": "Community",
+              "description": "Network of trusted promoters"
+            }
+          }
+        },
+        "proofOfContribution": {
+          "title": "\"Proof of Contribution\" System",
+          "description": "Understand how our unique reputation system works",
+          "howItWorks": {
+            "title": "How It Works?",
+            "steps": {
+              "useLink": {
+                "title": "Use another user's link",
+                "description": "Sign up for a service through a showcase"
+              },
+              "proveContribution": {
+                "title": "Prove your contribution",
+                "description": "Submit evidence of your signup (screenshot, email, etc.)"
+              },
+              "earnCredits": {
+                "title": "Earn credits",
+                "description": "Receive 1 Contribution Credit + 15 Karma Points"
+              }
+            }
+          },
+          "tip": "<strong>💡 Tip:</strong> The more you contribute, the more the community trusts you!",
+          "creditsBenefits": {
+            "title": "Credits Benefits",
+            "items": [
+              "Every 3 credits = 1 new free showcase",
+              "Increase your Trust Score in the community",
+              "Access to premium features"
+            ]
+          }
+        },
+        "ready": {
+          "title": "All Set!",
+          "description": "You're ready to start your LinkKarma journey",
+          "congratulations": "Congratulations, {name}!",
+          "welcomeMessage": "You are now part of the LinkKarma community",
+          "initialStatus": {
+            "title": "Your Initial Status:",
+            "freeShowcases": "Free Showcases",
+            "karmaPoints": "Karma Points"
+          },
+          "nextSteps": {
+            "title": "Next Steps:",
+            "createShowcase": {
+              "title": "1. Create your first showcase",
+              "description": "Use your welcome bonus to create an amazing showcase"
+            },
+            "exploreCommunity": {
+              "title": "2. Explore the community",
+              "description": "View other showcases and contribute to earn credits"
+            }
+          }
+        }
+      }
+    },
+    "showcases": {
+      "title": "Showcases",
+      "back": "Back",
+      "createShowcase": "Create Showcase",
+      "error": {
+        "title": "Error",
+        "loadingShowcases": "Error loading showcases",
+        "close": "Close"
+      },
+      "recent": {
+        "title": "Featured Showcases",
+        "subtitle": "Latest Verified Showcases",
+        "description": "See the most recent showcases created by our community, all verified and approved by our security system.",
+        "loading": "Loading showcases...",
+        "empty": "No showcases found.",
+        "viewAll": "View All Showcases",
+        "loadingError": "Error loading recent showcases:",
+        "wantSeeMore": "Want to See More Showcases?",
+        "exploreGallery": "Explore our complete gallery with hundreds of showcases created by the community. Find inspiration and see what's possible to create with our AI.",
+        "createMyShowcase": "Create My Showcase",
+        "emptyFirstCreate": "We don't have verified showcases to display yet. Be the first to create an amazing showcase!",
+        "createFirstShowcase": "Create First Showcase"
+      },
+      "boosted": {
+        "title": "Boosted Showcases",
+        "subtitle": "Community Boosted",
+        "description": "Showcases that received Karma Points investment for greater visibility. Highlights and boosts made by the community itself.",
+        "loading": "Loading boosted showcases...",
+        "empty": "No boosted showcases at the moment.",
+        "loadingError": "Error loading boosted showcases:",
+        "featuredPremium": "Premium Featured",
+        "active": "Active",
+        "activeHighlights": "Active Highlights",
+        "boosts": "Boosts",
+        "moreVisibility": "More Visibility",
+        "wantBoost": "Want to Boost Your Showcase?",
+        "useKarmaPoints": "Use your Karma Points to highlight your showcase and reach many more people. The more KP you invest, the greater your visibility!",
+        "startBoosting": "Start Boosting"
+      },
+      "listing": {
+        "title": "Referral Showcases",
+        "subtitle": "Discover the best offers curated by the community and earn with your referrals",
+        "filters": {
+          "title": "Filters and Search",
+          "search": "Search showcases, services or categories...",
+          "viewMode": "View:",
+          "grid": "Grid",
+          "list": "List"
+        },
+        "categories": {
+          "all": "All Categories",
+          "banking": "Banking & Finance",
+          "transport": "Transport",
+          "food": "Food",
+          "shopping": "Shopping",
+          "entertainment": "Entertainment",
+          "finance": "Investments",
+          "health": "Health",
+          "education": "Education",
+          "technology": "Technology",
+          "other": "Other"
+        },
+        "sort": {
+          "newest": "Newest",
+          "popular": "Most Popular",
+          "featured": "Featured"
+        },
+        "stats": {
+          "found": "showcase found",
+          "foundPlural": "showcases found",
+          "page": "Page",
+          "of": "of",
+          "total": "total"
+        },
+        "actions": {
+          "viewShowcase": "View Showcase",
+          "loadMore": "Load More Showcases"
+        },
+        "badges": {
+          "featured": "Featured",
+          "karmaBoost": "KP"
+        },
+        "loading": {
+          "title": "Loading showcases",
+          "subtitle": "Finding the best offers for you..."
+        },
+        "empty": {
+          "title": "No showcases found",
+          "subtitle": "Try adjusting your search filters or explore other categories to discover amazing offers"
+        }
+      },
+      "display": {
+        "badges": {
+          "featured": "Featured",
+          "karmaBoost": "Karma Boost",
+          "verified": "Verified"
+        },
+        "actions": {
+          "useReferral": "Use Referral Link",
+          "copyLink": "Copy Link",
+          "share": "Share",
+          "readyToStart": "Ready to get started?",
+          "clickBelow": "Click the button below and enjoy all the benefits of",
+          "startNow": "Start Now"
+        },
+        "sections": {
+          "whatIs": "What is it?",
+          "advantages": "Main Advantages",
+          "quickGuide": "Quick Guide",
+          "faq": "Frequently Asked Questions",
+          "gallery": "Gallery",
+          "video": "Demo Video",
+          "security": "Security Verification"
+        },
+        "metadata": {
+          "createdAt": "Created on",
+          "category": "Category",
+          "service": "Service"
+        },
+        "warnings": {
+          "preview": "This is a showcase preview",
+          "external": "You will be redirected to an external site"
+        },
+        "footer": {
+          "createdWith": "Showcase created with ❤️ on LinkKarma",
+          "lastUpdate": "Last updated"
+        }
+      },
+      "editor": {
+        "tabs": {
+          "content": "Content",
+          "media": "Media",
+          "preview": "Preview"
+        },
+        "actions": {
+          "save": "Save Draft",
+          "saving": "Saving...",
+          "publish": "Publish Showcase",
+          "publishing": "Publishing...",
+          "add": "Add",
+          "remove": "Remove",
+          "edit": "Edit"
+        },
+        "fields": {
+          "title": "Showcase Title",
+          "description": "Description",
+          "serviceName": "Service Name",
+          "referralUrl": "Referral URL",
+          "whatIs": "What is this service?",
+          "advantages": "Main Advantages",
+          "quickGuide": "Quick Usage Guide",
+          "faq": "Frequently Asked Questions",
+          "coverImage": "Cover Image",
+          "gallery": "Image Gallery",
+          "video": "Video (YouTube URL)",
+          "advantage": "Advantage",
+          "step": "Step"
+        },
+        "placeholders": {
+          "title": "Ex: Nubank - Free Digital Account",
+          "description": "Briefly describe what makes this service special...",
+          "serviceName": "Ex: Nubank",
+          "whatIs": "Explain what this service is and how it works...",
+          "advantage": "Enter an advantage...",
+          "guideStep": "Enter a guide step...",
+          "question": "Enter the question...",
+          "answer": "Enter the answer..."
+        },
+        "limits": {
+          "basic": "Basic Plan",
+          "pro": "Pro Plan",
+          "upgrade": "Upgrade",
+          "images": "images",
+          "video": "video"
+        },
+        "validation": {
+          "required": "This field is required",
+          "minLength": "Minimum {min} characters",
+          "maxLength": "Maximum {max} characters",
+          "invalidUrl": "Invalid URL"
+        },
+        "unsavedChanges": "You have unsaved changes. Do you want to continue?",
+        "newShowcase": "New Showcase",
+        "status": {
+          "published": "Published",
+          "draft": "Draft"
+        },
+        "media": {
+          "upload": "Media Upload",
+          "description": "Add images and videos to make your showcase more attractive",
+          "selectFiles": "Select Files"
+        },
+        "preview": {
+          "title": "Showcase Preview",
+          "description": "See how your showcase will appear to users",
+          "realTime": "Real-time Update",
+          "fillFields": "Fill in the fields to see the preview",
+          "completeFields": "Complete at least the title and \"What is it?\" description to view your showcase"
+        }
+      }
+    }
+  },
+  "backend": {
+    "ai-service": {
+      "analysis": {
+        "analyzing": "Analyzing service...",
+        "extracting": "Extracting information...",
+        "generating": "Generating content...",
+        "completed": "Analysis completed",
+        "error": "Analysis error"
+      },
+      "security": {
+        "checking": "Checking security...",
+        "approved": "APPROVED",
+        "rejected": "REJECTED",
+        "pending": "PENDING",
+        "confidence": "Confidence",
+        "recommendation": "Recommendation"
+      }
+    }
+  }
+}

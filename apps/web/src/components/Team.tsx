@@ -1,35 +1,42 @@
 'use client';
 
-import { 
-  Award, 
-  Building2, 
-  Code, 
-  ExternalLink, 
-  Github, 
-  Linkedin, 
-  MapPin, 
+import { useIntl } from '@linkkarma/intl';
+import {
+  Award,
+  Building2,
+  Code,
+  ExternalLink,
+  Github,
+  Linkedin,
+  MapPin,
+  Target,
+  TrendingUp,
   Users,
   Zap,
-  Target,
-  TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 
 export function Team() {
+  const { t } = useIntl();
+
+  const skillsItems = t('frontend.team.skills.items');
+
   return (
     <section id="team" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-100 rounded-full text-blue-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             <Users className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-            Conheça a Equipe
+            {t('frontend.team.badge')}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0">
-            Desenvolvido por <span className="text-blue-600">Especialistas</span>
-          </h2>
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0"
+            dangerouslySetInnerHTML={{
+              __html: t('frontend.team.title'),
+            }}
+          ></h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
-            LinkKarma é um projeto solo desenvolvido com paixão e expertise técnica, 
-            combinando anos de experiência em engenharia de software e liderança técnica.
+            {t('frontend.team.description')}
           </p>
         </div>
 
@@ -53,25 +60,25 @@ export function Team() {
                 {/* Info */}
                 <div className="text-center lg:text-left text-white flex-1">
                   <h3 className="text-2xl sm:text-3xl font-bold mb-2">
-                    Desenvolvedor & Fundador
+                    {t('frontend.team.founder.title')}
                   </h3>
                   <p className="text-blue-100 text-lg sm:text-xl mb-4">
-                    Gerente Técnico na Descomplica
+                    {t('frontend.team.founder.position')}
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4">
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-                      10+ anos experiência
+                      {t('frontend.team.founder.experience')}
                     </span>
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-                      70k+ usuários gerenciados
+                      {t('frontend.team.founder.usersManaged')}
                     </span>
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-                      AWS Specialist
+                      {t('frontend.team.founder.awsSpecialist')}
                     </span>
                   </div>
                   <div className="flex items-center justify-center lg:justify-start gap-2 text-blue-100">
                     <MapPin className="w-4 h-4" />
-                    <span>Blumenau, SC - Brasil</span>
+                    <span>{t('frontend.team.founder.location')}</span>
                   </div>
                 </div>
               </div>
@@ -80,7 +87,9 @@ export function Team() {
             <div className="p-6 sm:p-8">
               {/* Experience Summary */}
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Experiência Profissional</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
+                  {t('frontend.team.experience.title')}
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -88,11 +97,20 @@ export function Team() {
                         <Building2 className="w-5 h-5 text-blue-600" />
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900">Gerente Técnico</h5>
-                        <p className="text-gray-600 text-sm">Descomplica (2024 - atual)</p>
+                        <h5 className="font-semibold text-gray-900">
+                          {t(
+                            'frontend.team.experience.positions.technicalManager.title'
+                          )}
+                        </h5>
+                        <p className="text-gray-600 text-sm">
+                          {t(
+                            'frontend.team.experience.positions.technicalManager.company'
+                          )}
+                        </p>
                         <p className="text-gray-700 text-sm mt-1">
-                          Liderança de times UEE e SRE, modernização de infraestrutura AWS, 
-                          redução de 20% nos custos cloud.
+                          {t(
+                            'frontend.team.experience.positions.technicalManager.description'
+                          )}
                         </p>
                       </div>
                     </div>
@@ -102,11 +120,20 @@ export function Team() {
                         <Target className="w-5 h-5 text-purple-600" />
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900">Líder Técnico</h5>
-                        <p className="text-gray-600 text-sm">Descomplica (2023 - 2024)</p>
+                        <h5 className="font-semibold text-gray-900">
+                          {t(
+                            'frontend.team.experience.positions.technicalLead.title'
+                          )}
+                        </h5>
+                        <p className="text-gray-600 text-sm">
+                          {t(
+                            'frontend.team.experience.positions.technicalLead.company'
+                          )}
+                        </p>
                         <p className="text-gray-700 text-sm mt-1">
-                          Transição de plataforma legada para arquitetura moderna em EKS, 
-                          servindo 70k+ alunos.
+                          {t(
+                            'frontend.team.experience.positions.technicalLead.description'
+                          )}
                         </p>
                       </div>
                     </div>
@@ -118,11 +145,20 @@ export function Team() {
                         <Code className="w-5 h-5 text-green-600" />
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900">Engenheiro Sênior</h5>
-                        <p className="text-gray-600 text-sm">Descomplica (2019 - 2023)</p>
+                        <h5 className="font-semibold text-gray-900">
+                          {t(
+                            'frontend.team.experience.positions.seniorEngineer.title'
+                          )}
+                        </h5>
+                        <p className="text-gray-600 text-sm">
+                          {t(
+                            'frontend.team.experience.positions.seniorEngineer.company'
+                          )}
+                        </p>
                         <p className="text-gray-700 text-sm mt-1">
-                          Desenvolvimento de microserviços, DDD, React microfrontends, 
-                          DevOps e infraestrutura como código.
+                          {t(
+                            'frontend.team.experience.positions.seniorEngineer.description'
+                          )}
                         </p>
                       </div>
                     </div>
@@ -132,11 +168,20 @@ export function Team() {
                         <TrendingUp className="w-5 h-5 text-yellow-600" />
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900">Desenvolvedor</h5>
-                        <p className="text-gray-600 text-sm">IBM, Seventh, Senior (2013 - 2019)</p>
+                        <h5 className="font-semibold text-gray-900">
+                          {t(
+                            'frontend.team.experience.positions.developer.title'
+                          )}
+                        </h5>
+                        <p className="text-gray-600 text-sm">
+                          {t(
+                            'frontend.team.experience.positions.developer.company'
+                          )}
+                        </p>
                         <p className="text-gray-700 text-sm mt-1">
-                          Desenvolvimento full-stack, .NET, Angular, sistemas críticos 
-                          e soluções empresariais.
+                          {t(
+                            'frontend.team.experience.positions.developer.description'
+                          )}
                         </p>
                       </div>
                     </div>
@@ -146,18 +191,27 @@ export function Team() {
 
               {/* Key Skills */}
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Especialidades Técnicas</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
+                  {t('frontend.team.skills.title')}
+                </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                  {[
-                    'Node.js', 'React', 'TypeScript', 'AWS',
-                    'Kubernetes', 'Docker', 'Terraform', 'PostgreSQL',
-                    'Microserviços', 'DevOps', 'CI/CD', 'Monitoring',
-                    'DDD', 'Arquitetura', 'Liderança', 'Mentoria'
-                  ].map((skill) => (
-                    <div key={skill} className="px-3 py-2 bg-gray-100 rounded-lg text-center">
-                      <span className="text-sm font-medium text-gray-700">{skill}</span>
+                  {Array.isArray(skillsItems) ? (
+                    skillsItems.map((skill: string, index: number) => (
+                      <div
+                        key={index}
+                        className="px-3 py-2 bg-gray-100 rounded-lg text-center"
+                      >
+                        <span className="text-sm font-medium text-gray-700">
+                          {skill}
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="col-span-full text-center text-red-500">
+                      Error: Skills items is not an array. Type:{' '}
+                      {typeof skillsItems}
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
 
@@ -166,12 +220,16 @@ export function Team() {
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Award className="w-5 h-5 text-blue-600" />
-                    Formação
+                    {t('frontend.team.education.title')}
                   </h4>
                   <div className="space-y-2">
                     <div>
-                      <p className="font-semibold text-gray-900">Ciência da Computação</p>
-                      <p className="text-gray-600 text-sm">FURB - Universidade de Blumenau (2008-2014)</p>
+                      <p className="font-semibold text-gray-900">
+                        {t('frontend.team.education.degree')}
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        {t('frontend.team.education.university')}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -179,25 +237,24 @@ export function Team() {
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
                     <Zap className="w-5 h-5 text-yellow-600" />
-                    Conquistas
+                    {t('frontend.team.achievements.title')}
                   </h4>
                   <div className="space-y-2 text-sm text-gray-700">
-                    <p>• Redução de 20% nos custos AWS na Descomplica</p>
-                    <p>• Migração de 70k+ usuários para nova arquitetura</p>
-                    <p>• Liderança de times multidisciplinares</p>
-                    <p>• Implementação de cultura DevOps moderna</p>
+                    <p>• {t('frontend.team.achievements.items.0')}</p>
+                    <p>• {t('frontend.team.achievements.items.1')}</p>
+                    <p>• {t('frontend.team.achievements.items.2')}</p>
+                    <p>• {t('frontend.team.achievements.items.3')}</p>
                   </div>
                 </div>
               </div>
 
               {/* Vision for LinkKarma */}
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-6">
-                <h4 className="text-lg font-bold text-gray-900 mb-3">Visão para o LinkKarma</h4>
+                <h4 className="text-lg font-bold text-gray-900 mb-3">
+                  {t('frontend.team.vision.title')}
+                </h4>
                 <p className="text-gray-700 leading-relaxed">
-                  "Após anos liderando equipes e construindo plataformas que servem dezenas de milhares de usuários, 
-                  decidi aplicar toda essa experiência em um projeto pessoal. LinkKarma representa a convergência 
-                  de tudo que aprendi sobre arquitetura escalável, experiência do usuário e construção de 
-                  comunidades digitais sustentáveis."
+                  {t('frontend.team.vision.description')}
                 </p>
               </div>
 
@@ -208,7 +265,7 @@ export function Team() {
                   className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-sm w-full sm:w-auto justify-center"
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  Ver Currículo Completo
+                  {t('frontend.team.contact.viewFullResume')}
                 </Link>
                 <a
                   href="https://linkedin.com/in/seu-perfil"
@@ -217,7 +274,7 @@ export function Team() {
                   className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-sm w-full sm:w-auto justify-center"
                 >
                   <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
+                  {t('frontend.team.contact.linkedin')}
                 </a>
                 <a
                   href="https://github.com/seu-usuario"
@@ -226,7 +283,7 @@ export function Team() {
                   className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors text-sm w-full sm:w-auto justify-center"
                 >
                   <Github className="w-4 h-4 mr-2" />
-                  GitHub
+                  {t('frontend.team.contact.github')}
                 </a>
               </div>
             </div>
@@ -239,24 +296,36 @@ export function Team() {
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
               <Code className="w-6 h-6 text-blue-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">10+</h3>
-            <p className="text-gray-600 text-sm">Anos de Experiência</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-1">
+              {t('frontend.team.stats.experience.value')}
+            </h3>
+            <p className="text-gray-600 text-sm">
+              {t('frontend.team.stats.experience.label')}
+            </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-xl shadow-lg">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
               <Users className="w-6 h-6 text-purple-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">70k+</h3>
-            <p className="text-gray-600 text-sm">Usuários Gerenciados</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-1">
+              {t('frontend.team.stats.users.value')}
+            </h3>
+            <p className="text-gray-600 text-sm">
+              {t('frontend.team.stats.users.label')}
+            </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-xl shadow-lg">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
               <TrendingUp className="w-6 h-6 text-green-600" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">20%</h3>
-            <p className="text-gray-600 text-sm">Redução de Custos AWS</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-1">
+              {t('frontend.team.stats.costReduction.value')}
+            </h3>
+            <p className="text-gray-600 text-sm">
+              {t('frontend.team.stats.costReduction.label')}
+            </p>
           </div>
         </div>
       </div>

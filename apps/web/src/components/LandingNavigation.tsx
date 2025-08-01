@@ -1,25 +1,40 @@
 'use client';
 
 import { useAuthStore } from '@linkkarma/auth';
+import { useIntl } from '@linkkarma/intl';
 import { LogIn, Menu, User, UserPlus, X } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function LandingNavigation() {
   const router = useRouter();
   const { isAuthenticated, user, signOut } = useAuthStore();
+  const { t } = useIntl();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
   // Seções principais da landing page
   const sections = [
-    { id: 'hero', label: 'Início', href: '#hero' },
-    { id: 'core-loop', label: 'Como Funciona', href: '#core-loop' },
-    { id: 'vitrines-ia', label: 'Vitrines IA', href: '#vitrines-ia' },
-    { id: 'pricing', label: 'Preços', href: '#pricing' },
-    { id: 'team', label: 'Equipe', href: '#team' },
-    { id: 'faq', label: 'FAQ', href: '#faq' },
+    { id: 'hero', label: t('frontend.landing.navigation.home'), href: '#hero' },
+    {
+      id: 'core-loop',
+      label: t('frontend.landing.navigation.howItWorks'),
+      href: '#core-loop',
+    },
+    {
+      id: 'vitrines-ia',
+      label: t('frontend.landing.navigation.showcasesAI'),
+      href: '#vitrines-ia',
+    },
+    {
+      id: 'pricing',
+      label: t('frontend.landing.navigation.pricing'),
+      href: '#pricing',
+    },
+    { id: 'team', label: t('frontend.landing.navigation.team'), href: '#team' },
+    { id: 'faq', label: t('frontend.landing.navigation.faq'), href: '#faq' },
   ];
 
   // Scroll spy para destacar seção ativa
@@ -116,7 +131,7 @@ export function LandingNavigation() {
                   href="/showcases"
                   className="text-gray-700 hover:text-purple-600 transition-colors text-sm font-medium"
                 >
-                  Minhas Vitrines
+                  {t('frontend.landing.navigation.myShowcases')}
                 </Link>
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
@@ -130,7 +145,7 @@ export function LandingNavigation() {
                   onClick={handleSignOut}
                   className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
                 >
-                  Sair
+                  {t('frontend.landing.navigation.signOut')}
                 </button>
               </div>
             ) : (
@@ -140,17 +155,19 @@ export function LandingNavigation() {
                   className="flex items-center text-gray-700 hover:text-purple-600 transition-colors text-sm font-medium"
                 >
                   <LogIn className="w-4 h-4 mr-1" />
-                  Entrar
+                  {t('frontend.landing.navigation.signIn')}
                 </button>
                 <button
                   onClick={handleSignUp}
                   className="flex items-center bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
                 >
                   <UserPlus className="w-4 h-4 mr-1" />
-                  Criar Conta
+                  {t('frontend.landing.navigation.signUp')}
                 </button>
               </>
             )}
+
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -212,7 +229,7 @@ export function LandingNavigation() {
                       onClick={handleSignOut}
                       className="block w-full text-left px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 rounded-lg transition-colors"
                     >
-                      Sair
+                      {t('frontend.landing.navigation.signOut')}
                     </button>
                   </div>
                 ) : (
@@ -222,17 +239,21 @@ export function LandingNavigation() {
                       className="flex items-center w-full px-4 py-2 text-sm font-medium text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-colors"
                     >
                       <LogIn className="w-4 h-4 mr-2" />
-                      Entrar
+                      {t('frontend.landing.navigation.signIn')}
                     </button>
                     <button
                       onClick={handleSignUp}
                       className="flex items-center w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
                     >
                       <UserPlus className="w-4 h-4 mr-2" />
-                      Criar Conta
+                      {t('frontend.landing.navigation.signUp')}
                     </button>
                   </div>
                 )}
+
+                <div className="px-4 py-2 border-t border-gray-200">
+                  <LanguageSwitcher />
+                </div>
               </div>
             </div>
           </div>

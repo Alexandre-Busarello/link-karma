@@ -1,0 +1,759 @@
+{
+  "frontend": {
+    "landing": {
+      "hero": {
+        "title": "Transforme Seus",
+        "titleHighlight": "Links de Referral",
+        "titleEnd": "em Vitrines Profissionais",
+        "subtitle": "A primeira plataforma que combina IA avançada, sistema de Karma Points e verificação de segurança para maximizar suas conversões em até 300%",
+        "ctaPrimary": "Começar Gratuitamente",
+        "ctaSecondary": "Ver Vitrines",
+        "stats": {
+          "firstShowcase": "1ª Vitrine",
+          "firstShowcaseDesc": "100% Gratuita",
+          "aiAdvanced": "IA Avançada",
+          "aiAdvancedDesc": "Criação Automática",
+          "verification": "Verificação",
+          "verificationDesc": "Anti-Fraude"
+        }
+      },
+      "navigation": {
+        "home": "Início",
+        "howItWorks": "Como Funciona",
+        "showcasesAI": "Vitrines IA",
+        "pricing": "Preços",
+        "team": "Equipe",
+        "faq": "FAQ",
+        "myShowcases": "Minhas Vitrines",
+        "createShowcase": "Criar Vitrine",
+        "signIn": "Entrar",
+        "signUp": "Criar Conta",
+        "signOut": "Sair",
+        "user": "Usuário",
+        "hints": {
+          "viewFeatured": "Ver vitrines em destaque"
+        }
+      },
+      "features": {
+        "aiPowered": "Criado com IA",
+        "googleGemini": "Powered by Google Gemini AI",
+        "googleGeminiDesc": "Utilizamos a mais avançada IA do Google para criar conteúdo otimizado e persuasivo, aumentando suas conversões em até 300%.",
+        "howItWorks": {
+          "title": "Como Funciona",
+          "subtitle": "Transforme qualquer link de referral em uma vitrine profissional em segundos. Nossa IA analisa o serviço e cria conteúdo otimizado que converte até 300% mais que links simples.",
+          "step1": {
+            "title": "Cole Seu Link",
+            "description": "Nossa IA analisa automaticamente o serviço e extrai informações relevantes"
+          },
+          "step2": {
+            "title": "IA Cria o Conteúdo",
+            "description": "Título, descrição, vantagens, FAQ e guia passo-a-passo gerados automaticamente"
+          },
+          "step3": {
+            "title": "Publique e Compartilhe",
+            "description": "Sua vitrine fica disponível com URL única e otimizada para conversão"
+          }
+        }
+      },
+      "finalCta": {
+        "title": "Pronto para Revolucionar Seus Referrals?",
+        "subtitle": "Junte-se à primeira plataforma que combina IA, segurança e economia justa. Sua primeira vitrine é 100% gratuita!",
+        "cta": "Começar Agora - É Grátis",
+        "stats": {
+          "freeShowcase": "Primeira Vitrine Grátis",
+          "autoVerification": "Verificação Automática",
+          "conversionIncrease": "Aumento nas Conversões"
+        },
+        "actions": {
+          "createAccount": "Criar Conta Gratuita",
+          "exploreShowcases": "Explorar Vitrines"
+        }
+      },
+      "coreLoop": {
+        "badge": "O Coração do LinkKarma",
+        "title": "Sistema de <span class=\"text-green-600\">Prova de Contribuição</span>",
+        "description": "O primeiro ecossistema de referrals baseado em <strong>contribuição mútua</strong>. Para postar, você precisa contribuir primeiro.",
+        "howItWorks": "Como Funciona",
+        "step1": {
+          "title": "Use um Link de Referral",
+          "description": "Cadastre-se em um serviço através de um link da plataforma",
+          "reward": "+1 Crédito de Contribuição + 15 Karma Points"
+        },
+        "step2": {
+          "title": "Ajude na Verificação",
+          "description": "Analise solicitações na fila de verificação comunitária",
+          "reward": "+0.5 Crédito de Contribuição + 3 Karma Points"
+        },
+        "step3": {
+          "title": "Publique Sua Vitrine",
+          "description": "Com 3 créditos, desbloqueie um novo slot de vitrine",
+          "reward": "Vitrine Profissional Liberada!"
+        },
+        "merit": "Sistema 100% Baseado em Mérito",
+        "benefits": {
+          "quality": {
+            "title": "Qualidade Garantida",
+            "description": "Apenas usuários que contribuem podem postar, eliminando spam e garantindo links de alta qualidade."
+          },
+          "community": {
+            "title": "Comunidade Ativa",
+            "description": "Sistema de verificação comunitária cria uma rede de usuários engajados e confiáveis."
+          },
+          "growth": {
+            "title": "Crescimento Sustentável",
+            "description": "Modelo escalável que cresce naturalmente com a participação da comunidade."
+          }
+        }
+      },
+      "aiShowcases": {
+        "badge": "Tecnologia de Ponta",
+        "title": "Vitrines Inteligentes com <span class=\"text-purple-600\">IA Avançada</span>",
+        "description": "Transforme qualquer link de referral em uma <strong>vitrine profissional</strong> em segundos. Nossa IA analisa o serviço e cria conteúdo otimizado que <strong>converte até 300% mais</strong> que links simples.",
+        "interactiveHint": "👆 Clique para interagir",
+        "professionalShowcase": "Sua Vitrine Profissional em Apenas 3 Passos",
+        "poweredByGemini": "Powered by Google Gemini AI",
+        "geminiDescription": "Utilizamos a mais avançada IA do Google para criar conteúdo otimizado e persuasivo, aumentando suas conversões em até 300%.",
+        "advancedFeatures": {
+          "security": {
+            "title": "Verificação de Segurança",
+            "description": "Cada link passa por verificação automática anti-fraude antes da publicação"
+          },
+          "analytics": {
+            "title": "Analytics Integrado",
+            "description": "Acompanhe cliques, conversões e performance de cada vitrine em tempo real"
+          },
+          "seo": {
+            "title": "SEO Otimizado",
+            "description": "Vitrines otimizadas para mecanismos de busca, aumentando sua visibilidade"
+          }
+        },
+        "cta": {
+          "title": "Pronto para Criar Sua Primeira Vitrine?",
+          "description": "Veja como suas vitrines ficam na prática. Explore nossa galeria de vitrines reais criadas por usuários como você e descubra o poder da IA em ação.",
+          "exploreReal": "Explorar Vitrines Reais",
+          "createMine": "Criar Minha Vitrine"
+        }
+      },
+      "karmaPoints": {
+        "badge": "Economia Gamificada",
+        "title": "Sistema de <span class=\"text-yellow-600\">Karma Points</span>",
+        "description": "Uma economia interna baseada em <strong>contribuições reais</strong>. Ganhe Karma Points participando da comunidade e use para impulsionar suas vitrines.",
+        "balance": {
+          "title": "Seu Saldo de Karma",
+          "amount": "1,250 KP"
+        },
+        "activities": {
+          "verificationApproved": "Verificação aprovada",
+          "helpedVerification": "Ajudou na verificação",
+          "showcaseFeatured": "Vitrine destacada"
+        },
+        "actions": {
+          "boost": "Impulsionar (25 KP)",
+          "feature": "Destacar (100 KP)"
+        },
+        "howToEarn": {
+          "title": "Como Ganhar Karma Points",
+          "useReferrals": {
+            "title": "Usar Links de Referral",
+            "description": "+15 KP por verificação aprovada"
+          },
+          "communityVerification": {
+            "title": "Verificação Comunitária",
+            "description": "+3 KP por análise correta"
+          },
+          "proPlan": {
+            "title": "Plano Pro",
+            "description": "Salário mensal de KP"
+          }
+        },
+        "howToUse": {
+          "title": "Como Usar Karma Points",
+          "boostShowcase": {
+            "title": "Impulsionar Vitrine",
+            "description": "25 KP - Apareça no topo por 24h"
+          },
+          "featureShowcase": {
+            "title": "Destacar Vitrine",
+            "description": "100 KP - Destaque especial por 7 dias"
+          }
+        },
+        "fairEconomy": {
+          "title": "Economia Justa e Transparente",
+          "description": "Diferente de outras plataformas, no LinkKarma você ganha Karma Points através de <strong>contribuições reais</strong> para a comunidade, não apenas pagando."
+        }
+      },
+      "security": {
+        "badge": "Máxima Segurança",
+        "title": "Sistema de <span class=\"text-red-600\">Segurança Híbrido</span>",
+        "description": "Proteção multicamada com <strong>IA + Divulgador + Comunidade</strong>. Trust Score dinâmico e verificação anti-fraude garantem um ambiente seguro.",
+        "aiVerification": {
+          "title": "IA Multimodal",
+          "features": {
+            "automaticAnalysis": "Análise automática de evidências",
+            "fraudDetection": "Detecção de padrões de fraude",
+            "instantApproval": "Aprovação instantânea (>90% confiança)"
+          },
+          "badge": "Google Gemini AI"
+        },
+        "divulgatorVerification": {
+          "title": "Divulgador",
+          "features": {
+            "manualAnalysis": "Análise manual em 24h",
+            "specificKnowledge": "Conhecimento específico do serviço",
+            "agilityBonus": "Bônus por agilidade"
+          },
+          "badge": "Especialista Humano"
+        },
+        "communityVerification": {
+          "title": "Comunidade",
+          "features": {
+            "trustedUsers": "Usuários confiáveis (Trust Score >400)",
+            "votingConsensus": "Consenso por votação",
+            "infiniteScalability": "Escalabilidade infinita"
+          },
+          "badge": "Sabedoria Coletiva"
+        },
+        "trustScore": {
+          "title": "Sistema de Trust Score",
+          "description": "Pontuação dinâmica de 0 a 1000 que reflete a confiabilidade de cada usuário. Quanto maior o score, mais privilégios e responsabilidades na plataforma.",
+          "activities": {
+            "aiApproval": "Verificação aprovada por IA",
+            "communityAnalysis": "Análise comunitária correta",
+            "fraudAttempt": "Tentativa de fraude"
+          },
+          "points": {
+            "aiApproval": "+10 pontos",
+            "communityAnalysis": "+3 pontos",
+            "fraudAttempt": "-50 pontos"
+          },
+          "label": "Trust Score",
+          "status": {
+            "trusted": "Usuário Confiável",
+            "canParticipate": "Pode participar da verificação comunitária"
+          }
+        }
+      }
+    },
+    "faq": {
+      "badge": "Perguntas Frequentes",
+      "title": "Tire Suas Dúvidas",
+      "subtitle": "Tire Suas <span class=\"text-blue-600\">Dúvidas</span>",
+      "description": "Tudo o que você precisa saber sobre o LinkKarma",
+      "questions": [
+        {
+          "question": "O que é o sistema de Prova de Contribuição?",
+          "answer": "É o coração do LinkKarma. Para postar uma vitrine, você precisa contribuir com a comunidade usando links de referral ou ajudando na verificação comunitária. Isso garante qualidade e elimina spam. Você precisa de 3 Créditos de Contribuição para desbloquear um novo slot de vitrine."
+        },
+        {
+          "question": "Como funciona a criação de vitrines com IA?",
+          "answer": "Nossa IA analisa automaticamente seu link de referral, extrai informações do serviço e cria uma vitrine profissional com título, descrição, vantagens, FAQ e guia passo-a-passo. Utilizamos o Google Gemini AI para garantir conteúdo de alta qualidade. Você pode personalizar tudo antes de publicar."
+        },
+        {
+          "question": "O que são Karma Points e como usar?",
+          "answer": "Karma Points (KP) são a moeda interna do LinkKarma. Você ganha KP contribuindo com a comunidade (15 KP por uso de referral, 10 KP por verificação). Use KP para impulsionar suas vitrines (25 KP = 24h no topo) ou destacá-las (100 KP = 7 dias em destaque)."
+        },
+        {
+          "question": "Como funciona a verificação de segurança?",
+          "answer": "Temos um sistema híbrido: nossa IA faz a primeira análise verificando fontes como Trustpilot, Reclame Aqui e app stores. Depois, a comunidade pode fazer verificações adicionais. Vitrines só ficam públicas após aprovação no sistema de segurança."
+        },
+        {
+          "question": "Posso cancelar minha assinatura a qualquer momento?",
+          "answer": "Sim! Você pode cancelar sua assinatura Pro a qualquer momento. Suas vitrines continuarão ativas até o final do período pago, depois voltarão para as limitações do plano gratuito."
+        },
+        {
+          "question": "Como funciona o sistema anti-spam?",
+          "answer": "O sistema de Prova de Contribuição é nosso principal mecanismo anti-spam. Além disso, temos verificação de segurança obrigatória, moderação comunitária e limites diários de ações para evitar comportamentos abusivos."
+        }
+      ],
+      "contact": {
+        "title": "Ainda tem dúvidas?",
+        "description": "Nossa equipe está pronta para ajudar você a começar no LinkKarma",
+        "email": "Entrar em Contato",
+        "examples": "Ver Exemplos"
+      }
+    },
+    "pricing": {
+      "badge": "Planos e Preços",
+      "title": "Escolha o Plano <span class=\"text-blue-600\">Ideal para Você</span>",
+      "description": "Comece grátis e evolua conforme suas necessidades. Todos os planos incluem nossa IA avançada e sistema de verificação de segurança.",
+      "plans": {
+        "basic": {
+          "name": "Básico",
+          "price": "Grátis",
+          "period": "para sempre",
+          "description": "Perfeito para começar e testar a plataforma",
+          "popular": false,
+          "features": {
+            "activeShowcases": "1 Vitrine ativa",
+            "aiVerifications": "2 verificações IA por dia",
+            "coverImage": "1 imagem de capa",
+            "communityVerification": "Verificação comunitária",
+            "karmaPointsPurchase": "Compra de Karma Points avulsa",
+            "freeShowcaseBonus": "Bônus: Primeira vitrine grátis"
+          },
+          "limitations": {
+            "0": "Máximo 6 Provas de Contribuição por dia",
+            "1": "Máximo 90 Karma Points por dia (6 × 15)",
+            "2": "Sem salário mensal de KP"
+          },
+          "cta": "Começar Grátis"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "R$ 29",
+          "period": "/mês",
+          "description": "Para quem quer maximizar seus resultados com referrals",
+          "popular": true,
+          "popularBadge": "Mais Popular",
+          "features": {
+            "activeShowcases": "Até 10 Vitrines ativas",
+            "aiVerifications": "30 verificações IA por dia",
+            "monthlyKarmaPoints": "500 Karma Points mensais",
+            "imageGallery": "Galeria com 5 imagens",
+            "videoEmbed": "1 vídeo incorporado",
+            "karmaPointsDiscount": "Desconto em pacotes de KP"
+          },
+          "benefits": {
+            "0": "Até 30 Provas de Contribuição por dia",
+            "1": "Até 450 Karma Points por dia (30 × 15)",
+            "2": "Limites maiores para verificação IA",
+            "3": "Suporte prioritário"
+          },
+          "cta": "Assinar Pro"
+        }
+      },
+      "featuresIncluded": "Recursos Inclusos",
+      "extraBenefits": "Benefícios Extras",
+      "limitations": "Limitações",
+      "karmaPointsExplanation": {
+        "title": "Por que os Karma Points são Valiosos?",
+        "description": "Os Karma Points são a moeda interna que impulsiona suas vitrines e aumenta sua visibilidade na plataforma.",
+        "uses": {
+          "boostShowcase": {
+            "title": "Impulsionar Vitrine",
+            "description": "25 KP = Apareça no topo por 24h"
+          },
+          "featureShowcase": {
+            "title": "Destacar Vitrine",
+            "description": "100 KP = Destaque especial por 7 dias"
+          },
+          "proSalary": {
+            "title": "Salário Mensal Pro",
+            "description": "500 KP automáticos = R$ 125 em valor"
+          }
+        },
+        "proNote": "<strong>Plano Pro:</strong> Receba 500 KP mensais (equivalente a R$ 125 em impulsionamentos) + desconto na compra de pacotes extras"
+      },
+      "faq": {
+        "title": "Dúvidas sobre os Planos?",
+        "description": "Todos os planos incluem nossa IA avançada, sistema de verificação de segurança e acesso à comunidade.",
+        "viewFullFaq": "Ver FAQ Completo",
+        "startNow": "Começar Agora"
+      }
+    },
+    "team": {
+      "badge": "Conheça a Equipe",
+      "title": "Desenvolvido por <span class=\"text-blue-600\">Especialistas</span>",
+      "description": "LinkKarma é um projeto solo desenvolvido com paixão e expertise técnica, combinando anos de experiência em engenharia de software e liderança técnica.",
+      "founder": {
+        "title": "Desenvolvedor & Fundador",
+        "position": "Gerente Técnico na Descomplica",
+        "experience": "10+ anos experiência",
+        "usersManaged": "70k+ usuários gerenciados",
+        "awsSpecialist": "AWS Specialist",
+        "location": "Blumenau, SC - Brasil"
+      },
+      "experience": {
+        "title": "Experiência Profissional",
+        "positions": {
+          "technicalManager": {
+            "title": "Gerente Técnico",
+            "company": "Descomplica (2024 - atual)",
+            "description": "Liderança de times UEE e SRE, modernização de infraestrutura AWS, redução de 20% nos custos cloud."
+          },
+          "technicalLead": {
+            "title": "Líder Técnico",
+            "company": "Descomplica (2023 - 2024)",
+            "description": "Transição de plataforma legada para arquitetura moderna em EKS, servindo 70k+ alunos."
+          },
+          "seniorEngineer": {
+            "title": "Engenheiro Sênior",
+            "company": "Descomplica (2019 - 2023)",
+            "description": "Desenvolvimento de microserviços, DDD, React microfrontends, DevOps e infraestrutura como código."
+          },
+          "developer": {
+            "title": "Desenvolvedor",
+            "company": "IBM, Seventh, Senior (2013 - 2019)",
+            "description": "Desenvolvimento full-stack, .NET, Angular, sistemas críticos e soluções empresariais."
+          }
+        }
+      },
+      "skills": {
+        "title": "Especialidades Técnicas",
+        "items": [
+          "Node.js",
+          "React",
+          "TypeScript",
+          "AWS",
+          "Kubernetes",
+          "Docker",
+          "Terraform",
+          "PostgreSQL",
+          "Microserviços",
+          "DevOps",
+          "CI/CD",
+          "Monitoring",
+          "DDD",
+          "Arquitetura",
+          "Liderança",
+          "Mentoria"
+        ]
+      },
+      "education": {
+        "title": "Formação",
+        "degree": "Ciência da Computação",
+        "university": "FURB - Universidade de Blumenau (2008-2014)"
+      },
+      "achievements": {
+        "title": "Conquistas",
+        "items": [
+          "Redução de 20% nos custos AWS na Descomplica",
+          "Migração de 70k+ usuários para nova arquitetura",
+          "Liderança de times multidisciplinares",
+          "Implementação de cultura DevOps moderna"
+        ]
+      },
+      "vision": {
+        "title": "Visão para o LinkKarma",
+        "description": "\"Após anos liderando equipes e construindo plataformas que servem dezenas de milhares de usuários, decidi aplicar toda essa experiência em um projeto pessoal. LinkKarma representa a convergência de tudo que aprendi sobre arquitetura escalável, experiência do usuário e construção de comunidades digitais sustentáveis.\""
+      },
+      "contact": {
+        "viewFullResume": "Ver Currículo Completo",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+      },
+      "stats": {
+        "experience": {
+          "value": "10+",
+          "label": "Anos de Experiência"
+        },
+        "users": {
+          "value": "70k+",
+          "label": "Usuários Gerenciados"
+        },
+        "costReduction": {
+          "value": "20%",
+          "label": "Redução de Custos AWS"
+        }
+      }
+    },
+    "onboarding": {
+      "title": "Configuração Inicial",
+      "skip": "Pular",
+      "previous": "Anterior",
+      "next": "Próximo",
+      "start": "Começar",
+      "progress": {
+        "step": "Passo {current} de {total}",
+        "complete": "{percent}% completo"
+      },
+      "steps": {
+        "welcome": {
+          "title": "Bem-vindo ao LinkKarma!",
+          "description": "Sua jornada para maximizar seus ganhos com referrals começa aqui",
+          "welcomeBonus": {
+            "title": "🎉 Bônus de Boas-Vindas",
+            "description": "Sua primeira vitrine é <strong>100% GRÁTIS</strong>!",
+            "note": "Comece já a compartilhar seus links de referral sem custo algum"
+          },
+          "benefits": {
+            "conversions": {
+              "title": "Mais Conversões",
+              "description": "Vitrines atraentes convertem até 3x mais"
+            },
+            "aiVerification": {
+              "title": "Verificação IA",
+              "description": "Links verificados automaticamente"
+            },
+            "community": {
+              "title": "Comunidade",
+              "description": "Rede de divulgadores confiáveis"
+            }
+          }
+        },
+        "proofOfContribution": {
+          "title": "Sistema \"Prova de Contribuição\"",
+          "description": "Entenda como funciona nosso sistema único de reputação",
+          "howItWorks": {
+            "title": "Como Funciona?",
+            "steps": {
+              "useLink": {
+                "title": "Use um link de outro usuário",
+                "description": "Cadastre-se em um serviço através de uma vitrine"
+              },
+              "proveContribution": {
+                "title": "Comprove sua contribuição",
+                "description": "Envie evidência do seu cadastro (print, email, etc.)"
+              },
+              "earnCredits": {
+                "title": "Ganhe créditos",
+                "description": "Receba 1 Crédito de Contribuição + 15 Karma Points"
+              }
+            }
+          },
+          "creditsBenefits": {
+            "title": "Benefícios dos Créditos",
+            "items": [
+              "Cada 3 créditos = 1 nova vitrine grátis",
+              "Aumente seu Trust Score na comunidade",
+              "Acesso a recursos premium"
+            ]
+          },
+          "tip": "<strong>💡 Dica:</strong> Quanto mais você contribui, mais a comunidade confia em você!"
+        },
+        "ready": {
+          "title": "Tudo Pronto!",
+          "description": "Você está pronto para começar sua jornada no LinkKarma",
+          "congratulations": "Parabéns, {name}!",
+          "welcomeMessage": "Você agora faz parte da comunidade LinkKarma",
+          "initialStatus": {
+            "title": "Seu Status Inicial:",
+            "freeShowcases": "Vitrines Grátis",
+            "karmaPoints": "Karma Points"
+          },
+          "nextSteps": {
+            "title": "Próximos Passos:",
+            "createShowcase": {
+              "title": "1. Crie sua primeira vitrine",
+              "description": "Use seu bônus de boas-vindas para criar uma vitrine incrível"
+            },
+            "exploreCommunity": {
+              "title": "2. Explore a comunidade",
+              "description": "Veja outras vitrines e contribua para ganhar créditos"
+            }
+          }
+        }
+      }
+    },
+    "showcases": {
+      "title": "Vitrines",
+      "back": "Voltar",
+      "createShowcase": "Criar Vitrine",
+      "error": {
+        "title": "Erro",
+        "loadingShowcases": "Erro ao carregar vitrines",
+        "close": "Fechar"
+      },
+      "recent": {
+        "title": "Vitrines em Destaque",
+        "subtitle": "Últimas Vitrines Verificadas",
+        "description": "Veja as vitrines mais recentes criadas pela nossa comunidade, todas verificadas e aprovadas pelo nosso sistema de segurança.",
+        "loading": "Carregando vitrines...",
+        "empty": "Nenhuma vitrine encontrada.",
+        "viewAll": "Ver Todas as Vitrines",
+        "loadingError": "Erro ao carregar vitrines recentes:",
+        "wantSeeMore": "Quer Ver Mais Vitrines?",
+        "exploreGallery": "Explore nossa galeria completa com centenas de vitrines criadas pela comunidade. Encontre inspiração e veja o que é possível criar com nossa IA.",
+        "createMyShowcase": "Criar Minha Vitrine",
+        "emptyFirstCreate": "Ainda não temos vitrines verificadas para exibir. Seja o primeiro a criar uma vitrine incrível!",
+        "createFirstShowcase": "Criar Primeira Vitrine"
+      },
+      "boosted": {
+        "title": "Vitrines Impulsionadas",
+        "subtitle": "Impulsionadas pela Comunidade",
+        "description": "Vitrines que receberam investimento em Karma Points para maior visibilidade. Destaques e impulsionamentos feitos pela própria comunidade.",
+        "loading": "Carregando vitrines impulsionadas...",
+        "empty": "Nenhuma vitrine impulsionada no momento.",
+        "loadingError": "Erro ao carregar vitrines impulsionadas:",
+        "featuredPremium": "Destaque Premium",
+        "active": "Ativo",
+        "activeHighlights": "Destaques Ativos",
+        "boosts": "Impulsionamentos",
+        "moreVisibility": "Mais Visibilidade",
+        "wantBoost": "Quer Impulsionar Sua Vitrine?",
+        "useKarmaPoints": "Use seus Karma Points para destacar sua vitrine e alcançar muito mais pessoas. Quanto mais KP investir, maior será sua visibilidade!",
+        "startBoosting": "Começar a Impulsionar"
+      },
+      "listing": {
+        "title": "Vitrines de Referral",
+        "subtitle": "Descubra as melhores ofertas curadas pela comunidade e ganhe com suas indicações",
+        "filters": {
+          "title": "Filtros e Busca",
+          "search": "Buscar vitrines, serviços ou categorias...",
+          "viewMode": "Visualização:",
+          "grid": "Grade",
+          "list": "Lista"
+        },
+        "categories": {
+          "all": "Todas as Categorias",
+          "banking": "Bancos e Finanças",
+          "transport": "Transporte",
+          "food": "Alimentação",
+          "shopping": "Compras",
+          "entertainment": "Entretenimento",
+          "finance": "Investimentos",
+          "health": "Saúde",
+          "education": "Educação",
+          "technology": "Tecnologia",
+          "other": "Outros"
+        },
+        "sort": {
+          "newest": "Mais Recentes",
+          "popular": "Mais Populares",
+          "featured": "Em Destaque"
+        },
+        "stats": {
+          "found": "vitrine encontrada",
+          "foundPlural": "vitrines encontradas",
+          "page": "Página",
+          "of": "de",
+          "total": "no total"
+        },
+        "actions": {
+          "viewShowcase": "Ver Vitrine",
+          "loadMore": "Carregar Mais Vitrines"
+        },
+        "badges": {
+          "featured": "Destaque",
+          "karmaBoost": "KP"
+        },
+        "loading": {
+          "title": "Carregando vitrines",
+          "subtitle": "Buscando as melhores ofertas para você..."
+        },
+        "empty": {
+          "title": "Nenhuma vitrine encontrada",
+          "subtitle": "Tente ajustar os filtros de busca ou explore outras categorias para descobrir ofertas incríveis"
+        }
+      },
+      "display": {
+        "badges": {
+          "featured": "Em Destaque",
+          "karmaBoost": "Karma Boost",
+          "verified": "Verificado"
+        },
+        "actions": {
+          "useReferral": "Usar Link de Referral",
+          "copyLink": "Copiar Link",
+          "share": "Compartilhar",
+          "readyToStart": "Pronto para começar?",
+          "clickBelow": "Clique no botão abaixo e aproveite todas as vantagens do",
+          "startNow": "Começar Agora"
+        },
+        "sections": {
+          "whatIs": "O que é?",
+          "advantages": "Principais Vantagens",
+          "quickGuide": "Guia Rápido",
+          "faq": "Perguntas Frequentes",
+          "gallery": "Galeria",
+          "video": "Vídeo Demonstrativo",
+          "security": "Verificação de Segurança"
+        },
+        "metadata": {
+          "createdAt": "Criado em",
+          "category": "Categoria",
+          "service": "Serviço"
+        },
+        "warnings": {
+          "preview": "Esta é uma prévia da vitrine",
+          "external": "Você será redirecionado para um site externo"
+        },
+        "footer": {
+          "createdWith": "Vitrine criada com ❤️ no LinkKarma",
+          "lastUpdate": "Última atualização"
+        }
+      },
+      "editor": {
+        "tabs": {
+          "content": "Conteúdo",
+          "media": "Mídia",
+          "preview": "Prévia"
+        },
+        "actions": {
+          "save": "Salvar Rascunho",
+          "saving": "Salvando...",
+          "publish": "Publicar Vitrine",
+          "publishing": "Publicando...",
+          "add": "Adicionar",
+          "remove": "Remover",
+          "edit": "Editar"
+        },
+        "fields": {
+          "title": "Título da Vitrine",
+          "description": "Descrição",
+          "serviceName": "Nome do Serviço",
+          "referralUrl": "URL de Referral",
+          "whatIs": "O que é este serviço?",
+          "advantages": "Principais Vantagens",
+          "quickGuide": "Guia Rápido de Uso",
+          "faq": "Perguntas Frequentes",
+          "coverImage": "Imagem de Capa",
+          "gallery": "Galeria de Imagens",
+          "video": "Vídeo (URL do YouTube)",
+          "advantage": "Vantagem",
+          "step": "Passo"
+        },
+        "placeholders": {
+          "title": "Ex: Nubank - Conta Digital Gratuita",
+          "description": "Descreva brevemente o que torna este serviço especial...",
+          "serviceName": "Ex: Nubank",
+          "whatIs": "Explique o que é este serviço e como funciona...",
+          "advantage": "Digite uma vantagem...",
+          "guideStep": "Digite um passo do guia...",
+          "question": "Digite a pergunta...",
+          "answer": "Digite a resposta..."
+        },
+        "limits": {
+          "basic": "Plano Básico",
+          "pro": "Plano Pro",
+          "upgrade": "Fazer Upgrade",
+          "images": "imagens",
+          "video": "vídeo"
+        },
+        "validation": {
+          "required": "Este campo é obrigatório",
+          "minLength": "Mínimo de {min} caracteres",
+          "maxLength": "Máximo de {max} caracteres",
+          "invalidUrl": "URL inválida"
+        },
+        "unsavedChanges": "Você tem alterações não salvas. Deseja continuar?",
+        "newShowcase": "Nova Vitrine",
+        "status": {
+          "published": "Publicado",
+          "draft": "Rascunho"
+        },
+        "media": {
+          "upload": "Upload de Mídia",
+          "description": "Adicione imagens e vídeos para tornar sua vitrine mais atrativa",
+          "selectFiles": "Selecionar Arquivos"
+        },
+        "preview": {
+          "title": "Pré-visualização da Vitrine",
+          "description": "Veja como sua vitrine aparecerá para os usuários",
+          "realTime": "Atualização em Tempo Real",
+          "fillFields": "Preencha os campos para ver a pré-visualização",
+          "completeFields": "Complete pelo menos o título e a descrição \"O que é?\" para visualizar sua vitrine"
+        }
+      }
+    }
+  },
+  "backend": {
+    "ai-service": {
+      "analysis": {
+        "analyzing": "Analisando serviço...",
+        "extracting": "Extraindo informações...",
+        "generating": "Gerando conteúdo...",
+        "completed": "Análise concluída",
+        "error": "Erro na análise"
+      },
+      "security": {
+        "checking": "Verificando segurança...",
+        "approved": "APROVADO",
+        "rejected": "REJEITADO",
+        "pending": "PENDENTE",
+        "confidence": "Confiança",
+        "recommendation": "Recomendação"
+      }
+    }
+  }
+}

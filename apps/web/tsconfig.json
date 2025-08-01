@@ -44,5 +44,22 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "../../libs/ui-components"
+    },
+    {
+      "path": "../../libs/auth"
+    },
+    {
+      "path": "../../libs/shared-types"
+    },
+    {
+      "path": "../../libs/db"
+    },
+    {
+      "path": "../../libs/intl"
+    }
   ]
 }

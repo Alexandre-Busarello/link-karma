@@ -1,5 +1,6 @@
 'use client';
 
+import { useIntl } from '@linkkarma/intl';
 import { Showcase, ShowcaseCategory } from '@linkkarma/shared-types';
 import {
   AlertTriangle,
@@ -69,6 +70,7 @@ export function ShowcaseDisplay({
   isPreview = false,
   onReferralClick,
 }: ShowcaseDisplayProps) {
+  const { t } = useIntl();
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [imageError, setImageError] = useState(false);
 
@@ -111,11 +113,10 @@ export function ShowcaseDisplay({
             </div>
             <div>
               <h4 className="text-sm font-semibold text-yellow-800 mb-1">
-                Modo Visualização
+                {t('frontend.showcases.display.warnings.preview')}
               </h4>
               <p className="text-sm text-yellow-700 leading-relaxed">
-                Esta é uma prévia da sua vitrine. O botão de referral não
-                funcionará neste modo.
+                {t('frontend.showcases.display.warnings.external')}
               </p>
             </div>
           </div>
@@ -129,7 +130,7 @@ export function ShowcaseDisplay({
           new Date(showcase.featured_until) > new Date() && (
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 text-white mb-6 shadow-lg">
               <Star className="w-4 h-4 fill-current" />
-              Vitrine em Destaque
+              {t('frontend.showcases.display.badges.featured')}
             </div>
           )}
 
@@ -173,13 +174,19 @@ export function ShowcaseDisplay({
 
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span>Atualizado em {formatDate(showcase.updated_at)}</span>
+            <span>
+              {t('frontend.showcases.display.metadata.createdAt')}{' '}
+              {formatDate(showcase.updated_at)}
+            </span>
           </div>
 
           {showcase.karma_boost > 0 && (
             <div className="flex items-center gap-2 text-purple-600 font-medium">
               <Zap className="w-4 h-4" />
-              <span>+{showcase.karma_boost} Karma Boost</span>
+              <span>
+                +{showcase.karma_boost}{' '}
+                {t('frontend.showcases.display.badges.karmaBoost')}
+              </span>
             </div>
           )}
         </div>
@@ -209,20 +216,23 @@ export function ShowcaseDisplay({
             disabled={isPreview}
           >
             <Rocket className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-            <span>Acessar {showcase.service_name}</span>
+            <span>
+              {t('frontend.showcases.display.actions.useReferral')}{' '}
+              {showcase.service_name}
+            </span>
             <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
 
           {isPreview && (
             <p className="text-sm text-gray-500 mt-3 flex items-center gap-2">
               <AlertTriangle className="w-4 h-4" />
-              Botão desabilitado no modo visualização
+              {t('frontend.showcases.display.warnings.preview')}
             </p>
           )}
 
           {!isPreview && (
             <p className="text-sm text-gray-600 mt-3">
-              Link seguro e verificado pela comunidade
+              {t('frontend.showcases.display.badges.verified')}
             </p>
           )}
         </div>
@@ -250,7 +260,8 @@ export function ShowcaseDisplay({
                 <Lightbulb className="w-5 h-5 text-blue-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
-                O que é o {showcase.service_name}?
+                {t('frontend.showcases.display.sections.whatIs')}{' '}
+                {showcase.service_name}?
               </h2>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
@@ -270,7 +281,7 @@ export function ShowcaseDisplay({
                   <Sparkles className="w-5 h-5 text-purple-600" />
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900">
-                  Vantagens Incríveis
+                  {t('frontend.showcases.display.sections.advantages')}
                 </h2>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -301,7 +312,7 @@ export function ShowcaseDisplay({
                 <Image className="w-5 h-5 text-pink-600" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900">
-                Galeria de Imagens
+                {t('frontend.showcases.display.sections.gallery')}
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -327,7 +338,7 @@ export function ShowcaseDisplay({
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="mr-3">🎥</span>
-              Vídeo Demonstrativo
+              {t('frontend.showcases.display.sections.video')}
             </h2>
             <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
               <div className="text-center">
@@ -349,7 +360,7 @@ export function ShowcaseDisplay({
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <span className="mr-3">📋</span>
-                Seu Guia Rápido para Começar
+                {t('frontend.showcases.display.sections.quickGuide')}
               </h2>
               <div className="bg-blue-50 p-6 rounded-lg">
                 <ol className="space-y-3">
@@ -371,7 +382,7 @@ export function ShowcaseDisplay({
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="mr-3">❓</span>
-              Perguntas Frequentes
+              {t('frontend.showcases.display.sections.faq')}
             </h2>
             <div className="space-y-4">
               {showcase.content.faq.map((faq, index) => (
@@ -407,10 +418,10 @@ export function ShowcaseDisplay({
       <div className="text-center mt-12 pt-8 border-t border-gray-200">
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-lg">
           <h3 className="text-xl font-bold text-gray-900 mb-4">
-            Pronto para começar?
+            {t('frontend.showcases.display.actions.readyToStart')}
           </h3>
           <p className="text-gray-600 mb-6">
-            Clique no botão abaixo e aproveite todas as vantagens do{' '}
+            {t('frontend.showcases.display.actions.clickBelow')}{' '}
             {showcase.service_name}!
           </p>
           <button
@@ -419,7 +430,7 @@ export function ShowcaseDisplay({
             disabled={isPreview}
           >
             <span className="mr-2">🎯</span>
-            Começar Agora
+            {t('frontend.showcases.display.actions.startNow')}
             <span className="ml-2">→</span>
           </button>
         </div>
@@ -428,9 +439,10 @@ export function ShowcaseDisplay({
       {/* Footer Info */}
       <div className="mt-8 pt-6 border-t border-gray-100 text-center text-sm text-gray-500">
         <p>
-          Vitrine criada com ❤️ no LinkKarma •
+          {t('frontend.showcases.display.footer.createdWith')} •
           <span className="ml-1">
-            Última atualização: {formatDate(showcase.updated_at)}
+            {t('frontend.showcases.display.footer.lastUpdate')}:{' '}
+            {formatDate(showcase.updated_at)}
           </span>
         </p>
       </div>
